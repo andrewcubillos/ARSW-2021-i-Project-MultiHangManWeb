@@ -36,12 +36,12 @@ class WBCanvas extends React.Component {
             p.draw = function () {
                 if (p.mouseIsPressed === true) {
                     let c = color(255, 204, 0);
-                    p.fill(c);
+                    p.fill(100, 100, 500);
                     p.ellipse(p.mouseX, p.mouseY, 10, 10);
                     wsreference.send(p.mouseX, p.mouseY); 
                 }
                 if (p.mouseIsPressed === false) {
-                    p.fill(900, 900, 344);
+                    p.fill(100, 10, 50);
                 }
             };
         }
