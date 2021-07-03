@@ -33,7 +33,7 @@ class WBCanvas extends React.Component {
              */
             let input, button, greeting;
 
-            p.setup=function()  {
+            p.setup=function(input)  {
                 // create canvas
                 p.createCanvas(710, 400);
 
