@@ -22,7 +22,6 @@ class WBCanvas extends React.Component {
                         (msg) => {
                     var obj = JSON.parse(msg);
                     console.log("On func call back ", msg);
-                    this.drawPoint(obj.x, obj.y);
                 });
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'}
@@ -69,9 +68,7 @@ class WBCanvas extends React.Component {
            
         }
     }
-    drawPoint(x, y) {
-        this.myp5.ellipse(x, y, 20, 20);
-    }
+    
 
     componentDidMount() {
         this.myp5 = new p5(this.sketch, 'container');
