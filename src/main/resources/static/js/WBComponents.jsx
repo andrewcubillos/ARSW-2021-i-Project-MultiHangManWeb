@@ -37,8 +37,8 @@ class WBCanvas extends React.Component {
                 // create canvas
                 p.createCanvas(710, 400);
 
-                p.createInput();
-                p.position(20,65);
+                input=p.createInput();
+                input.position(20,65);
                 
            
         }
