@@ -31,16 +31,26 @@ class WBCanvas extends React.Component {
              * @name Input and Button
              * @description Input text and click the button to see it affect the the canvas.
              */
-            let input, button, greeting;
+            let input1,input2,input3, button1,button2,button3, greeting;
 
             p.setup=function()  {
                 // create canvas
                 p.createCanvas(710, 400);
 
-                input=p.createInput();
-                input.position(30,105);
-                button=p.createButton('submit');
-                button.position(input.x + input.width, 65);
+                input1=p.createInput();
+                input1.position(30,105);
+                button1=p.createButton('submit');
+                button1.position(input1.x + input1.width, 105);
+                
+                input2=p.createInput();
+                input2.position(30,105);
+                button2=p.createButton('submit');
+                button2.position(input2.x + input2.width, 305);
+                
+                input3=p.createInput();
+                input3.position(30,105);
+                button3=p.createButton('submit');
+                button3.position(input3.x + input3.width, 505);
                 
            
         }
