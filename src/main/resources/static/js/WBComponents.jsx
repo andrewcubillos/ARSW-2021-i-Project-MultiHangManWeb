@@ -38,19 +38,19 @@ class WBCanvas extends React.Component {
                 p.createCanvas(710, 400);
 
                 input1=p.createInput();
-                input1.position(30,105);
+                input1.position(30,605);
                 button1=p.createButton('submit');
-                button1.position(input1.x + input1.width, 105);
+                button1.position(input1.x + input1.width, 605);
                 
                 input2=p.createInput();
-                input2.position(230,105);
+                input2.position(330,605);
                 button2=p.createButton('submit');
-                button2.position(input2.x + input2.width, 105);
+                button2.position(input2.x + input2.width, 605);
                 
                 input3=p.createInput();
-                input3.position(330,105);
+                input3.position(430,605);
                 button3=p.createButton('submit');
-                button3.position(input3.x + input3.width, 105);
+                button3.position(input3.x + input3.width, 605);
                 
            
         }
