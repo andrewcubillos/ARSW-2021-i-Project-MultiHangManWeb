@@ -37,36 +37,11 @@ class WBCanvas extends React.Component {
                 // create canvas
                 p.createCanvas(710, 400);
 
-                p.input = createInput();
-                p.input.position(20, 65);
-
-                p.button = createButton('submit');
-                p.button.position(input.x + input.width, 65);
-                p.button.mousePressed(greet);
-
-                greeting = createElement('h2', 'what is your name?');
-                greeting.position(20, 5);
-
-                p.textAlign(CENTER);
-                p.textSize(50);
-            }
-
-            p.greet= function() {
-                const name = input.value();
-                greeting.html('hello ' + name + '!');
-                input.value('');
-
-                for (let i = 0; i < 200; i++) {
-                    p.push();
-                    p.fill(random(255), 255, 255);
-                    p.translate(random(width), random(height));
-                    p.rotate(random(2 * PI));
-                    p.text(name, 0, 0);
-                    p.pop();
-                }
-            }
+                p.createInput();
+                
            
         }
+    }
     }
     
 
