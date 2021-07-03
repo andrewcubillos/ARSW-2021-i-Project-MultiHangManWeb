@@ -20,36 +20,59 @@ class WBCanvas extends React.Component {
         this.comunicationWS =
                 new WSBBChannel(BBServiceURL(),
                         (msg) => {
-                var obj = JSON.parse(msg);
-                         console.log("On func call back ", msg);
-                        this.drawPoint(obj.x, obj.y);
+                    var obj = JSON.parse(msg);
+                    console.log("On func call back ", msg);
+                    this.drawPoint(obj.x, obj.y);
                 });
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'}
-        let wsreference = this.comunicationWS; 
+        let wsreference = this.comunicationWS;
         this.sketch = function (p) {
-            let x = 100;
-            let y = 100;
-            p.setup = function () {
-                p.createCanvas(700, 410);
-                p.background(0);
-            };
-            p.draw = function () {
-                if (p.mouseIsPressed === true) {
-                    p.fill(10, 100, 50);
-                    p.ellipse(p.mouseX, p.mouseY, 20, 20);
-                    wsreference.send(p.mouseX, p.mouseY); 
+            /*
+             * @name Input and Button
+             * @description Input text and click the button to see it affect the the canvas.
+             */
+            let input, button, greeting;
+
+            p.setup=function()  {
+                // create canvas
+                p.createCanvas(710, 400);
+
+                input = createInput();
+                input.position(20, 65);
+
+                button = createButton('submit');
+                button.position(input.x + input.width, 65);
+                button.mousePressed(greet);
+
+                greeting = createElement('h2', 'what is your name?');
+                greeting.position(20, 5);
+
+                p.textAlign(CENTER);
+                p.textSize(50);
+            }
+
+            p.greet= function() {
+                const name = input.value();
+                greeting.html('hello ' + name + '!');
+                input.value('');
+
+                for (let i = 0; i < 200; i++) {
+                    p.push();
+                    p.fill(random(255), 255, 255);
+                    p.translate(random(width), random(height));
+                    p.rotate(random(2 * PI));
+                    p.text(name, 0, 0);
+                    p.pop();
                 }
-                if (p.mouseIsPressed === false) {
-                    p.fill(255, 255, 255);
-                }
-            };
+            }
+           
         }
     }
     drawPoint(x, y) {
-            this.myp5.ellipse(x, y, 20, 20);
+        this.myp5.ellipse(x, y, 20, 20);
     }
-    
+
     componentDidMount() {
         this.myp5 = new p5(this.sketch, 'container');
         this.setState({loadingState: 'Canvas Loaded'});
@@ -58,7 +81,7 @@ class WBCanvas extends React.Component {
     {
         return(
                 <div>
-                <h4>Drawing status: {this.state.loadingState}</h4>
+                    <h4>Drawing status: {this.state.loadingState}</h4>
                 </div>);
     }
 }
@@ -85,11 +108,11 @@ class WSBBChannel {
     onMessage(evt) {
         console.log("In onMessage", evt);
         // Este if permite que el primer mensaje del servidor no se tenga encuenta.
-                // El primer mensaje solo confirma que se estableció la conexión.
-                // De ahí en adelante intercambiaremos solo puntos(x,y) con el servidor
-                if (evt.data != "Connection established.") {
-        this.receivef(evt.data);
-    }
+        // El primer mensaje solo confirma que se estableció la conexión.
+        // De ahí en adelante intercambiaremos solo puntos(x,y) con el servidor
+        if (evt.data != "Connection established.") {
+            this.receivef(evt.data);
+        }
     }
     onError(evt) {
         console.error("In onError", evt);
