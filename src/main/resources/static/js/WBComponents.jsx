@@ -32,6 +32,7 @@ class WBCanvas extends React.Component {
             let y = 100;
             p.setup = function () {
                 p.createCanvas(700, 410);
+                p.background(0);
             };
             p.draw = function () {
                 if (p.mouseIsPressed === true) {
