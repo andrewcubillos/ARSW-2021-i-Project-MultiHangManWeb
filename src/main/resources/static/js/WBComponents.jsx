@@ -27,17 +27,11 @@ class WBCanvas extends React.Component {
         this.state = {loadingState: 'Loading Canvas ...'}
         let wsreference = this.comunicationWS;
         this.sketch = function (p) {
-            /*
-             * @name Input and Button
-             * @description Input text and click the button to see it affect the the canvas.
-             */
-            let input, button, greeting;
+            
+            let input=createInput();
 
-            p.setup=function(input)  {
-                // create canvas
+            p.setup=function()  {
                 p.createCanvas(710, 400);
-
-                input.createInput();
                 input.position(20,65);
            
         }
