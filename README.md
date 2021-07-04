@@ -1,5 +1,11 @@
 # MultiHangManWeb
 ## Andrés Felipe Cubillos Hurtado
+
+## Heroku:
+https://hangmanarsw2021i.herokuapp.com/
+## CircleCi:
+https://app.circleci.com/pipelines/github/andrewcubillos
+
 ### Resumen
 El objetivo de este proyecto es brindar al usuario, una opción multijugador del famoso juego "Ahorcado", en donde pueda interactuar y competir con diferentes usuarios, ganando puntos y rankeando.
 
