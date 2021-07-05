@@ -93,7 +93,7 @@ class WBCanvas extends React.Component {
                 
                 button1=p.createButton("submit");
                 button1.position(40+input1.width, 580);
-                button1.mousePressed(ahorcar1);
+                
                 
                 button2=p.createButton("submit");
                 button2.position(340+input2.width, 580);
@@ -116,10 +116,10 @@ class WBCanvas extends React.Component {
             };
             function ahorcar3(){
                  p.stroke(color2,color3,color1);
-                ellipse1=p.ellipse(xiii,yiii,50,50);  
+                 ellipse1=p.ellipse(xiii,yiii,50,50);  
             };
             p.draw = () => {    
-                
+                button1.mousePressed(ahorcar1);
                 if (p.mouseIsPressed === true) {
                    
                     wsreference.send(xi,yi,xii,yii,xiii,yiii,color1,color2,color3); 
