@@ -24,7 +24,7 @@ class WBCanvas extends React.Component {
                         (msg) => {
                 var obj = JSON.parse(msg);
                          console.log("On func call back ", msg);
-                        this.drawPoint(obj.x, obj.y,obj.color1,obj.color2,obj.color3);
+                        this.drawPoint(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                 });
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'}
@@ -48,6 +48,10 @@ class WBCanvas extends React.Component {
             let input2;
             let input3;
             let ellipse1;
+            let xi=250;
+            let yi=75;
+            
+            
             p.setup = function () {
                 
                 p.createCanvas(1000, 500);
@@ -93,7 +97,7 @@ class WBCanvas extends React.Component {
             };
             function ahorcar(){
                 p.stroke(color1,color2,color3);
-                ellipse1=p.ellipse(225,65,50,50);
+                ellipse1=p.ellipse(xi,yi,50,50);
                 
                
             }
@@ -102,7 +106,7 @@ class WBCanvas extends React.Component {
                 if (p.mouseIsPressed === true) {
                     p.fill(color1, color2, color3);
                     p.ellipse(p.mouseX, p.mouseY, 20, 20);
-                    wsreference.send(p.mouseX, p.mouseY,color1,color2,color3); 
+                    wsreference.send(xi,yi,color1,color2,color3); 
                 }
                 if (p.mouseIsPressed === false) {
                     p.fill(255, 255, 255);
@@ -115,7 +119,7 @@ class WBCanvas extends React.Component {
     }
     drawPoint(x, y,color1,color2,color3) {
             this.myp5.fill(color1,color2,color3);
-            this.myp5.ellipse(x, y, 20, 20);
+            this.myp5.ellipse(x, y, 50, 50);
     }
     
     componentDidMount() {
@@ -162,8 +166,8 @@ class WSBBChannel {
     onError(evt) {
         console.error("In onError", evt);
     }
-    send(x, y,color1,color2,color3) {
-        let msg = '{ "x": ' + (x) + ', "y": ' + (y) + ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
+    send(xi, yi,color1,color2,color3) {
+        let msg = '{ "xi": ' + (xi) + ', "yi": ' + (yi) + ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
