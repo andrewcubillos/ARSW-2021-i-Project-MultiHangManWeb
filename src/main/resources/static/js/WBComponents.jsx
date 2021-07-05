@@ -54,13 +54,13 @@ class WBCanvas extends React.Component {
             let yii=75;
             let xiii=850;
             let yiii=75;
-           
+            let canvas;
             
             
             
             p.setup = () => {
                 
-                p.createCanvas(1000, 500);
+                canvas=p.createCanvas(1000, 500);
                 
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
@@ -119,8 +119,8 @@ class WBCanvas extends React.Component {
             };
             p.draw = () => {    
                 
-                
-                    wsreference.send(xi,yi,xii,yii,xiii,yiii.color1,color2,color3); 
+                    if(canvas){
+                    wsreference.send(xi,yi,xii,yii,xiii,yiii.color1,color2,color3); }
                 
             };
             
