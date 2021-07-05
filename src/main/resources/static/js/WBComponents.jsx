@@ -53,7 +53,7 @@ class WBCanvas extends React.Component {
             let xi=250;
             let yi=75;
             let y2=110;
-            let y3=180;
+            let y3=200;
             let y4=175;
             let y5=200;
             let x2;
@@ -113,8 +113,6 @@ class WBCanvas extends React.Component {
             };
             function ahorcar1(){
                 xi=250;
-                
-                
                 p.stroke(color1,color2,color3);
                 if (wrong1===0){
                     p.ellipse(xi,yi,50,50);
@@ -132,14 +130,32 @@ class WBCanvas extends React.Component {
                 xi=550;
                 p.stroke(color3,color1,color2);
                
-                p.ellipse(xi,yi,50,50); 
-                wsreference.sendelipse(xi,yi,color3,color1,color2); 
+                if (wrong1===0){
+                    p.ellipse(xi,yi,50,50);
+                    wsreference.sendelipse(xi,yi,color1,color2,color3);
+                }
+                else if(wrong1===1){
+                   
+                    p.line(xi, y2, xi, y3);   
+                    wsreference.sendeline(xi,y2,xi,y3,color1,color2,color3);
+                    
+                }
+                wrong1++;
             };
             function ahorcar3(){
                 xi=850;
                  p.stroke(color2,color3,color1);
-                 p.ellipse(xi,yi,50,50); 
-                 wsreference.sendelipse(xi,yi,color2,color3,color1); 
+                 if (wrong1===0){
+                    p.ellipse(xi,yi,50,50);
+                    wsreference.sendelipse(xi,yi,color1,color2,color3);
+                }
+                else if(wrong1===1){
+                   
+                    p.line(xi, y2, xi, y3);   
+                    wsreference.sendeline(xi,y2,xi,y3,color1,color2,color3);
+                    
+                }
+                wrong1++;
             };
             p.draw = () => {    
                 button1.mousePressed(ahorcar1);
