@@ -120,7 +120,7 @@ class WBCanvas extends React.Component {
             };
             p.draw = () => {    
                 
-                if (canvas) {
+                if (p.mouseIsPressed === true) {
                    
                     wsreference.send(xi,yi,xii,yii,xiii,yiii,color1,color2,color3); 
                 }
