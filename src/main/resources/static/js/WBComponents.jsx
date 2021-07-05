@@ -97,7 +97,7 @@ class WBCanvas extends React.Component {
                 
                 
             };
-            function ahorcar(){
+            p.ahorcar=()=>{
                 p.stroke(color1,color2,color3);
                 ellipse1=p.ellipse(xi,yi,50,50);
                 
