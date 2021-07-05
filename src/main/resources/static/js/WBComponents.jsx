@@ -47,22 +47,23 @@ class WBCanvas extends React.Component {
             let input1;
             let input2;
             let input3;
+            let ellipse1;
             p.setup = function () {
                 
                 p.createCanvas(1000, 500);
                 
                 p.strokeWeight(10);
-                p.stroke(255,255,0);
+                p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
                 p.line(40, 30, 250, 30);
                 p.line(40, 100, 100, 30);
                 
-                p.stroke(0,10,255);
+                p.stroke(color3,color1,color2);
                 p.line(340, 30, 340, 370);         
                 p.line(340, 30, 550, 30);
                 p.line(340, 100, 400, 30);
                 
-                p.stroke(255,10,0);
+                p.stroke(color2,color3,color1);
                 p.line(640, 30, 640, 370);         
                 p.line(640, 30, 850, 30);
                 p.line(640, 100, 700, 30);
@@ -84,7 +85,7 @@ class WBCanvas extends React.Component {
                 
             };
             function ahorcar(){
-                p.ellipse(250,30,50,50);
+                ellipse1=p.ellipse(250,30,50,50);
                
             }
             p.draw = function () {    
