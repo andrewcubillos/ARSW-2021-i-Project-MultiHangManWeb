@@ -108,7 +108,7 @@ class WBCanvas extends React.Component {
                 
                 
             };
-            function ahorcamiento(x1,x2,x3,x4,x5,wrong,c1,c2,c3){
+            function ahorcamiento(x1,x2,x3,x4,x5,c1,c2,c3,wrong){
                 p.stroke(c1,c2,c3);
                 if (wrong===0){
                     p.ellipse(x1,yi,50,50);
