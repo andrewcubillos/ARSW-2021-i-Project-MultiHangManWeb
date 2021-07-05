@@ -49,22 +49,23 @@ class WBCanvas extends React.Component {
             let input3;
             p.setup = function () {
                 
-                p.createCanvas(1000, 710);
+                p.createCanvas(1000, 450);
                 
                 p.strokeWeight(10);
                 p.stroke(255,255,0);
                 p.line(40, 30, 40, 370);         
                 p.line(40, 30, 250, 30);
+                p.line(40, 100, 100, 30);
                 
                 p.stroke(0,10,255);
                 p.line(340, 30, 340, 370);         
                 p.line(340, 30, 550, 30);
-                
+                p.line(40, 100, 400, 30);
                 
                 p.stroke(255,10,0);
                 p.line(640, 30, 640, 370);         
                 p.line(640, 30, 850, 30);
-                
+                p.line(40, 100, 700, 30);
                 input1 = p.createInput();
                 input1.position(40, 580);
                 input2 = p.createInput();
