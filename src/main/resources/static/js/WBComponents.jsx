@@ -166,8 +166,9 @@ class WBCanvas extends React.Component {
             };
             
             p.draw = () => {    
-                 button1.mousePressed(ahorcar1);
+                 
                  button2.mousePressed(ahorcar2);
+                 button1.mousePressed(ahorcar1);
                  button3.mousePressed(ahorcar3);
                 
                
