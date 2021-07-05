@@ -49,31 +49,35 @@ class WBCanvas extends React.Component {
             let input3;
             p.setup = function () {
                 
-                p.createCanvas(1000, 810);
+                p.createCanvas(1000, 710);
+                
                 p.strokeWeight(10);
-                p.stroke(209,25,0);
+                p.stroke(255,255,0);
                 p.line(40, 30, 40, 370);         
                 p.line(40, 30, 250, 30);
-                p.stroke(10,250,10);
+                
+                p.stroke(0,10,255);
                 p.line(340, 30, 340, 370);         
                 p.line(340, 30, 550, 30);
-                p.stroke(0,10,255);
+                
+                
+                p.stroke(255,10,0);
                 p.line(640, 30, 640, 370);         
                 p.line(640, 30, 850, 30);
                 
                 input1 = p.createInput();
-                input1.position(40, 680);
+                input1.position(40, 580);
                 input2 = p.createInput();
-                input2.position(340, 680);
+                input2.position(340, 580);
                 input3 = p.createInput();
-                input3.position(640, 680);
+                input3.position(640, 580);
                 
                 button1=p.createButton("submit");
-                button1.position(40+input1.width, 680);
+                button1.position(40+input1.width, 580);
                 button2=p.createButton("submit");
-                button2.position(340+input2.width, 680);
+                button2.position(340+input2.width, 580);
                 button3=p.createButton("submit");
-                button3.position(640+input3.width, 680);
+                button3.position(640+input3.width, 580);
                 
             };
             function ahorcar(){
