@@ -132,12 +132,12 @@ class WBCanvas extends React.Component {
                
                 if (wrong2===0){
                     p.ellipse(xi,yi,50,50);
-                    wsreference.sendelipse(xi,yi,color1,color2,color3);
+                    wsreference.sendelipse(xi,yi,color3,color1,color2);
                 }
                 else if(wrong2===1){
                    
                     p.line(xi, y2, xi, y3);   
-                    wsreference.sendeline(xi,y2,xi,y3,color1,color2,color3);
+                    wsreference.sendeline(xi,y2,xi,y3,color3,color1,color2);
                     
                 }
                 wrong2++;
@@ -147,12 +147,12 @@ class WBCanvas extends React.Component {
                  p.stroke(color2,color3,color1);
                  if (wrong3===0){
                     p.ellipse(xi,yi,50,50);
-                    wsreference.sendelipse(xi,yi,color1,color2,color3);
+                    wsreference.sendelipse(xi,yi,color2,color3,color1);
                 }
                 else if(wrong3===1){
                    
                     p.line(xi, y2, xi, y3);   
-                    wsreference.sendeline(xi,y2,xi,y3,color1,color2,color3);
+                    wsreference.sendeline(xi,y2,xi,y3,color2,color3,color1);
                     
                 }
                 wrong3++;
