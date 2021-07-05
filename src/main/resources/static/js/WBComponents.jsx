@@ -50,7 +50,7 @@ class WBCanvas extends React.Component {
             let input3;
             let xi=250;
             let yi=75;
-            let y2=125;
+            let y2=115;
             let y3=140;
             let y4=175;
             let y5=200;
@@ -120,7 +120,7 @@ class WBCanvas extends React.Component {
                 }
                 else if(wrong1===1){
                    
-                    p.line(xi, y2, xi, y2);   
+                    p.line(xi, y2, xi, y3);   
                     
                 }
                 wrong1++;
