@@ -30,15 +30,15 @@ class WBCanvas extends React.Component {
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'};
         let wsreference = this.comunicationWS; 
+        let wrong1=0;
+        let wrong2=0;
+        let wrong3=0;
+        
+        
         this.sketch = function (p) {
             let x = 100;
             let y = 100;
-            let max=255;
-            let min=0;
-            let max2=200;
-            let min2=100;
-            let max3=255;
-            let min3=200;
+            
             let color1 = 255;
             let color2 = 255;
             let color3 = 0;
@@ -56,13 +56,12 @@ class WBCanvas extends React.Component {
             let xiii=850;
             let yiii=75;
            
-            let canvas=false;
-            
+           
             
             p.setup = () => {
                 
                 p.createCanvas(1000, 500);
-                canvas=true;
+              
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
@@ -97,29 +96,30 @@ class WBCanvas extends React.Component {
                 
                 button2=p.createButton("submit");
                 button2.position(340+input2.width, 580);
-                button2.mousePressed(ahorcar2);
+           
                 
                 button3=p.createButton("submit");
                 button3.position(640+input3.width, 580);
-                button3.mousePressed(ahorcar3);
+                
                 
                 
             };
             function ahorcar1(){
                 p.stroke(color1,color2,color3);
-                ellipse1=p.ellipse(xi,yi,50,50);
-                wsreference.send(xi,yi,color1,color2,color3); 
+                
+                p.ellipse(xi,yi,50,50);
+                wsreference.sendelipse(xi,yi,color1,color2,color3); 
             };
             function ahorcar2(){
                 p.stroke(color3,color1,color2);
                
-                ellipse1=p.ellipse(xii,yii,50,50); 
-                wsreference.send(xii,yii,color3,color1,color2); 
+                p.ellipse(xii,yii,50,50); 
+                wsreference.sendelipse(xii,yii,color3,color1,color2); 
             };
             function ahorcar3(){
                  p.stroke(color2,color3,color1);
-                 ellipse1=p.ellipse(xiii,yiii,50,50); 
-                 wsreference.send(xiii,yiii,color2,color3,color1); 
+                 p.ellipse(xiii,yiii,50,50); 
+                 wsreference.sendelipse(xiii,yiii,color2,color3,color1); 
             };
             p.draw = () => {    
                 button1.mousePressed(ahorcar1);
@@ -183,7 +183,7 @@ class WSBBChannel {
     onError(evt) {
         console.error("In onError", evt);
     }
-    send(xi, yi,color1,color2,color3) {
+    sendelipse(xi, yi,color1,color2,color3) {
         let msg = '{ "xi": ' + (xi) + ', "yi": ' + (yi)  +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
