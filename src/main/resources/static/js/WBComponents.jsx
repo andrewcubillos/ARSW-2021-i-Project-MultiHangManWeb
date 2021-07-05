@@ -26,6 +26,7 @@ class WBCanvas extends React.Component {
                          console.log("On func call back ", msg);
                         this.drawPoint(obj.xi, obj.yi,obj.xii, obj.yii,obj.xiii, obj.yiii,obj.color1,obj.color2,obj.color3);
                 });
+        
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'};
         let wsreference = this.comunicationWS; 
@@ -55,13 +56,13 @@ class WBCanvas extends React.Component {
             let xiii=850;
             let yiii=75;
            
-            
+            let canvas=false;
             
             
             p.setup = () => {
                 
                 p.createCanvas(1000, 500);
-                
+                canvas=true;
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
@@ -119,7 +120,7 @@ class WBCanvas extends React.Component {
             };
             p.draw = () => {    
                 
-                if (p.mouseIsPressed === true) {
+                if (canvas) {
                    
                     wsreference.send(xi,yi,xii,yii,xiii,yiii.color1,color2,color3); 
                 }
@@ -138,6 +139,7 @@ class WBCanvas extends React.Component {
     }
     
     componentDidMount() {
+        montado=true;
         this.myp5 = new p5(this.sketch, 'container');
         this.setState({loadingState: 'Canvas Loaded'});
     }
@@ -181,8 +183,8 @@ class WSBBChannel {
     onError(evt) {
         console.error("In onError", evt);
     }
-    send(xi, yi,color1,color2,color3) {
-        let msg = '{ "xi": ' + (xi) + ', "yi": ' + (yi) + ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
+    send(xi, yi,xii,yii,xiii,yiii,color1,color2,color3) {
+        let msg = '{ "xi": ' + (xi) + ', "yi": ' + (yi) + ', "xii": ' + (xii) + ', "yii": ' + (yii) + ', "xiii": ' + (xiii) + ', "yiii": ' + (yiii) +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
