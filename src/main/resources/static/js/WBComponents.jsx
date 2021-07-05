@@ -132,7 +132,7 @@ class WBCanvas extends React.Component {
                 
         };
     }
-    drawPoint(x, y,x2,x3,x2,y3,color1,color2,color3) {
+    drawPoint(x, y,x2,x3,x3,y3,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.ellipse(x, y, 50, 50);
             this.myp5.ellipse(x2, y3, 50, 50);
