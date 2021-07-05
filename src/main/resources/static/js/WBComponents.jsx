@@ -27,7 +27,7 @@ class WBCanvas extends React.Component {
                         this.drawPoint(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                 });
         this.myp5 = null;
-        this.state = {loadingState: 'Loading Canvas ...'}
+        this.state = {loadingState: 'Loading Canvas ...'};
         let wsreference = this.comunicationWS; 
         this.sketch = function (p) {
             let x = 100;
@@ -52,7 +52,7 @@ class WBCanvas extends React.Component {
             let yi=75;
             
             
-            p.setup = function () {
+            p.setup = () => {
                 
                 p.createCanvas(1000, 500);
                 
@@ -86,22 +86,24 @@ class WBCanvas extends React.Component {
                 
                 button1=p.createButton("submit");
                 button1.position(40+input1.width, 580);
-                button1.mousePressed(p.ahorcar);
+                button1.mousePressed(ahorcar);
                 
                 button2=p.createButton("submit");
                 button2.position(340+input2.width, 580);
-                button1.mousePressed(p.ahorcar);
+                button2.mousePressed(ahorcar);
                 button3=p.createButton("submit");
                 button3.position(640+input3.width, 580);
-                button1.mousePressed(p.ahorcar(3));
+                button3.mousePressed(ahorcar);
                 
                 
             };
-            p.ahorcar= function(x){
+            function ahorcar(){
                 p.stroke(color1,color2,color3);
-                ellipse1=p.ellipse(xi,yi,50,50); 
-            };
-            p.draw = function () {    
+                ellipse1=p.ellipse(xi,yi,50,50);
+                
+               
+            }
+            p.draw = () => {    
                 
                 if (p.mouseIsPressed === true) {
                     p.fill(color1, color2, color3);
@@ -115,7 +117,7 @@ class WBCanvas extends React.Component {
             
             
                 
-        }
+        };
     }
     drawPoint(x, y,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
