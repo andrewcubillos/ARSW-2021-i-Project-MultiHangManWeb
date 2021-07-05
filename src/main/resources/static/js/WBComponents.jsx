@@ -2,7 +2,7 @@ class Editor extends React.Component {
     render() {
         return (
                 <div>
-                    <h1>Hello, {this.props.name}</h1>
+                    <h1>            HANGMAN             </h1>
                     <hr/>
                     <div id="toolstatus"></div>
                     <hr/>
@@ -50,13 +50,20 @@ class WBCanvas extends React.Component {
             p.setup = function () {
                 
                 p.createCanvas(700, 410);
+               
+                input1 = p.createInput();
+                input1.position(40, 380);
+                input2 = p.createInput();
+                input2.position(340, 380);
+                input3 = p.createInput();
+                input3.position(640, 380);
                 
                 button1=p.createButton("submit");
-                button1.position(150, 65);
+                button1.position(40+input1.width, 380);
                 button2=p.createButton("submit");
+                button1.position(340+input2.width, 380);
                 button3=p.createButton("submit");
-                input1 = p.createInput();
-                input1.position(20, 600);
+                button1.position(640+input3.width, 380);
                 
             };
             function clean(){
