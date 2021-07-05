@@ -122,7 +122,7 @@ class WBCanvas extends React.Component {
                 
                 if (canvas) {
                    
-                    wsreference.send(xi,yi,xii,yii,xiii,yiii.color1,color2,color3); 
+                    wsreference.send(xi,yi,xii,yii,xiii,yiii,color1,color2,color3); 
                 }
                
             };
