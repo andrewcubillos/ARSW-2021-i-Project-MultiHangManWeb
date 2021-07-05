@@ -50,16 +50,13 @@ class WBCanvas extends React.Component {
             let input1;
             let input2;
             let input3;
-            let xi=250;
+            
             let yi=75;
             let y2=110;
             let y3=200;
             let y4=175;
-            let y5=200;
-            let x2;
-            let x3;
-            let x4;
-            let x5;
+            let y5=250;
+            
             
             
            
@@ -111,54 +108,65 @@ class WBCanvas extends React.Component {
                 
                 
             };
-            function ahorcar1(){
-                xi=250;
-                p.stroke(color1,color2,color3);
-                if (wrong1===0){
-                    p.ellipse(xi,yi,50,50);
-                    wsreference.sendelipse(xi,yi,color1,color2,color3);
+            function ahorcamiento(x1,x2,x3,x4,x5,wrong,c1,c2,c3){
+                p.stroke(c1,c2,c3);
+                if (wrong===0){
+                    p.ellipse(x1,yi,50,50);
+                    wsreference.sendelipse(x1,yi,c1,c2,c3);
                 }
-                else if(wrong1===1){
+                else if(wrong===1){
                    
-                    p.line(xi, y2, xi, y3);   
-                    wsreference.sendeline(xi,y2,xi,y3,color1,color2,color3);
+                    p.line(x1, y2, x1, y3);   
+                    wsreference.sendeline(x1,y2,x1,y3,c1,c2,c3);
                     
                 }
+                else if(wrong===2){
+                   
+                    p.line(x1, y2, x2, y4);   
+                    wsreference.sendeline(x1,y2,x2,y4,c1,c2,c3);
+                    
+                }
+                else if(wrong===3){
+                   
+                    p.line(x1, y2, x3, y4);   
+                    wsreference.sendeline(x1,y2,x3,y4,c1,c2,c3);
+                    
+                }
+                else if(wrong===4){
+                   
+                    p.line(x1, y3, x4, y5);   
+                    wsreference.sendeline(x1,y2,x4,y5,color1,color2,color3);
+                    
+                }
+                else if(wrong===5){
+                   
+                    p.line(x1, y3, x5, y5);   
+                    wsreference.sendeline(x1,y2,x5,y5,color1,color2,color3);
+                    
+                }
+                
+            }
+            function ahorcar1(){
+                
+                ahorcamiento(250,220,280,220,280,color1,color2,color3,wrong1);
                 wrong1++;
+                
             };
             function ahorcar2(){
-                xi=550;
-                p.stroke(color3,color1,color2);
-               
-                if (wrong2===0){
-                    p.ellipse(xi,yi,50,50);
-                    wsreference.sendelipse(xi,yi,color3,color1,color2);
-                }
-                else if(wrong2===1){
-                   
-                    p.line(xi, y2, xi, y3);   
-                    wsreference.sendeline(xi,y2,xi,y3,color3,color1,color2);
-                    
-                }
+                
+                ahorcamiento(550,520,580,520,580,color3,color1,color2,wrong2);
                 wrong2++;
+                
             };
             function ahorcar3(){
-                xi=850;
-                 p.stroke(color2,color3,color1);
-                 if (wrong3===0){
-                    p.ellipse(xi,yi,50,50);
-                    wsreference.sendelipse(xi,yi,color2,color3,color1);
-                }
-                else if(wrong3===1){
-                   
-                    p.line(xi, y2, xi, y3);   
-                    wsreference.sendeline(xi,y2,xi,y3,color2,color3,color1);
-                    
-                }
+                
+                ahorcamiento(850,820,880,820,880,color2,color3,color1,wrong3);
                 wrong3++;
+                
             };
+            
             p.draw = () => {    
-                button1.mousePressed(ahorcar1);
+                 button1.mousePressed(ahorcar1);
                  button2.mousePressed(ahorcar2);
                  button3.mousePressed(ahorcar3);
                 
