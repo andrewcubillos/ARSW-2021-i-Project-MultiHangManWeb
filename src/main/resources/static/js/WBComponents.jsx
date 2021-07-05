@@ -102,7 +102,7 @@ class WBCanvas extends React.Component {
                 ellipse1=p.ellipse(xi,yi,50,50);
                 
                
-            }
+            };
             p.draw = () => {    
                 
                 if (p.mouseIsPressed === true) {
