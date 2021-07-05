@@ -48,13 +48,18 @@ class WBCanvas extends React.Component {
             let input1;
             let input2;
             let input3;
-            let ellipse1;
             let xi=250;
             let yi=75;
-            let xii=550;
-            let yii=75;
-            let xiii=850;
-            let yiii=75;
+            let y2=125;
+            let y3=140;
+            let y4=175;
+            let y3=200;
+            let x2;
+            let x3;
+            let x4;
+            let x5;
+            
+            
            
            
             
@@ -105,21 +110,31 @@ class WBCanvas extends React.Component {
                 
             };
             function ahorcar1(){
-                p.stroke(color1,color2,color3);
+                xi=250;
                 
-                p.ellipse(xi,yi,50,50);
-                wsreference.sendelipse(xi,yi,color1,color2,color3); 
+                
+                p.stroke(color1,color2,color3);
+                if (wrong1===0){
+                    p.ellipse(xi,yi,50,50);
+                    wsreference.sendelipse(xi,yi,color1,color2,color3);
+                }
+                else if(wrong1===1){
+                   
+                    p.line(xi, y2, xi, y2);   
+                    
+                }
+                wrong1++;
             };
             function ahorcar2(){
                 p.stroke(color3,color1,color2);
                
-                p.ellipse(xii,yii,50,50); 
-                wsreference.sendelipse(xii,yii,color3,color1,color2); 
+                p.ellipse(xi,yi,50,50); 
+                wsreference.sendelipse(xi,yi,color3,color1,color2); 
             };
             function ahorcar3(){
                  p.stroke(color2,color3,color1);
-                 p.ellipse(xiii,yiii,50,50); 
-                 wsreference.sendelipse(xiii,yiii,color2,color3,color1); 
+                 p.ellipse(xi,yi,50,50); 
+                 wsreference.sendelipse(xi,yi,color2,color3,color1); 
             };
             p.draw = () => {    
                 button1.mousePressed(ahorcar1);
