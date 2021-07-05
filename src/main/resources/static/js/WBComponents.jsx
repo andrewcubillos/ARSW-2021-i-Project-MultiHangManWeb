@@ -130,32 +130,32 @@ class WBCanvas extends React.Component {
                 xi=550;
                 p.stroke(color3,color1,color2);
                
-                if (wrong1===0){
+                if (wrong2===0){
                     p.ellipse(xi,yi,50,50);
                     wsreference.sendelipse(xi,yi,color1,color2,color3);
                 }
-                else if(wrong1===1){
+                else if(wrong2===1){
                    
                     p.line(xi, y2, xi, y3);   
                     wsreference.sendeline(xi,y2,xi,y3,color1,color2,color3);
                     
                 }
-                wrong1++;
+                wrong2++;
             };
             function ahorcar3(){
                 xi=850;
                  p.stroke(color2,color3,color1);
-                 if (wrong1===0){
+                 if (wrong3===0){
                     p.ellipse(xi,yi,50,50);
                     wsreference.sendelipse(xi,yi,color1,color2,color3);
                 }
-                else if(wrong1===1){
+                else if(wrong3===1){
                    
                     p.line(xi, y2, xi, y3);   
                     wsreference.sendeline(xi,y2,xi,y3,color1,color2,color3);
                     
                 }
-                wrong1++;
+                wrong3++;
             };
             p.draw = () => {    
                 button1.mousePressed(ahorcar1);
