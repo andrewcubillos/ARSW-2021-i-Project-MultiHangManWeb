@@ -139,7 +139,7 @@ class WBCanvas extends React.Component {
     }
     
     componentDidMount() {
-        montado=true;
+        
         this.myp5 = new p5(this.sketch, 'container');
         this.setState({loadingState: 'Canvas Loaded'});
     }
