@@ -92,40 +92,36 @@ class WBCanvas extends React.Component {
                 
                 button1=p.createButton("submit");
                 button1.position(40+input1.width, 580);
-                button1.mousePressed(p.ahorcar1);
+                button1.mousePressed(ahorcar1);
                 
                 button2=p.createButton("submit");
                 button2.position(340+input2.width, 580);
-                button2.mousePressed(p.ahorcar2);
+                button2.mousePressed(ahorcar2);
                 
                 button3=p.createButton("submit");
                 button3.position(640+input3.width, 580);
-                button3.mousePressed(p.ahorcar3);
+                button3.mousePressed(ahorcar3);
                 
                 
             };
-            p.ahorcar1=()=>{
-                p.stroke();
+            function ahorcar1(){
+                p.stroke(color1,color2,color3);
                 ellipse1=p.ellipse(xi,yi,50,50);  
             };
-            p.ahorcar2=()=>{
-                p.stroke();
-                ellipse1=p.ellipse(xi,yi,50,50);  
+            function ahorcar2(){
+                p.stroke(color3,color1,color2);
+               
+                ellipse1=p.ellipse(xii,yii,50,50);  
             };
-            p.ahorcar3=()=>{
-                p.stroke();
-                ellipse1=p.ellipse(xi,yi,50,50);  
+            function ahorcar3(){
+                 p.stroke(color2,color3,color1);
+                ellipse1=p.ellipse(xiii,yiii,50,50);  
             };
             p.draw = () => {    
                 
-                if (p.mouseIsPressed === true) {
-                    p.fill(color1, color2, color3);
-                    p.ellipse(p.mouseX, p.mouseY, 20, 20);
+                
                     wsreference.send(xi,yi,xii,yii,xiii,yiii.color1,color2,color3); 
-                }
-                if (p.mouseIsPressed === false) {
-                    p.fill(255, 255, 255);
-                }
+                
             };
             
             
@@ -135,7 +131,7 @@ class WBCanvas extends React.Component {
     drawPoint(x,y,x2,y2,x3,y3,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.ellipse(x, y, 50, 50);
-            this.myp5.ellipse(x2, y3, 50, 50);
+            this.myp5.ellipse(x2, y2, 50, 50);
             this.myp5.ellipse(x3, y3, 50, 50);
     }
     
