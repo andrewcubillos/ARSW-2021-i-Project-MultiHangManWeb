@@ -24,7 +24,7 @@ class WBCanvas extends React.Component {
                         (msg) => {
                 var obj = JSON.parse(msg);
                          console.log("On func call back ", msg);
-                        this.drawPoint(obj.xi, obj.yi,obj.xii, obj.yii,obj.xiii, obj.yiii,obj.color1,obj.color2,obj.color3);
+                        this.drawPoint(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                 });
         
         this.myp5 = null;
@@ -107,23 +107,25 @@ class WBCanvas extends React.Component {
             };
             function ahorcar1(){
                 p.stroke(color1,color2,color3);
-                ellipse1=p.ellipse(xi,yi,50,50);  
+                ellipse1=p.ellipse(xi,yi,50,50);
+                wsreference.send(xi,yi,color1,color2,color3); 
             };
             function ahorcar2(){
                 p.stroke(color3,color1,color2);
                
-                ellipse1=p.ellipse(xii,yii,50,50);  
+                ellipse1=p.ellipse(xii,yii,50,50); 
+                wsreference.send(xii,yii,color3,color1,color2); 
             };
             function ahorcar3(){
                  p.stroke(color2,color3,color1);
-                 ellipse1=p.ellipse(xiii,yiii,50,50);  
+                 ellipse1=p.ellipse(xiii,yiii,50,50); 
+                 wsreference.send(xiii,yiii,color2,color3,color1); 
             };
             p.draw = () => {    
                 button1.mousePressed(ahorcar1);
-                if (p.mouseIsPressed === true) {
-                   
-                    wsreference.send(xi,yi,xii,yii,xiii,yiii,color1,color2,color3); 
-                }
+                 button2.mousePressed(ahorcar2);
+                 button3.mousePressed(ahorcar3);
+                
                
             };
             
@@ -131,11 +133,9 @@ class WBCanvas extends React.Component {
                 
         };
     }
-    drawPoint(x,y,x2,y2,x3,y3,color1,color2,color3) {
+    drawPoint(x,y,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.ellipse(x, y, 50, 50);
-            this.myp5.ellipse(x2, y2, 50, 50);
-            this.myp5.ellipse(x3, y3, 50, 50);
     }
     
     componentDidMount() {
@@ -183,8 +183,8 @@ class WSBBChannel {
     onError(evt) {
         console.error("In onError", evt);
     }
-    send(xi, yi,xii,yii,xiii,yiii,color1,color2,color3) {
-        let msg = '{ "xi": ' + (xi) + ', "yi": ' + (yi) + ', "xii": ' + (xii) + ', "yii": ' + (yii) + ', "xiii": ' + (xiii) + ', "yiii": ' + (yiii) +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
+    send(xi, yi,color1,color2,color3) {
+        let msg = '{ "xi": ' + (xi) + ', "yi": ' + (yi)  +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
