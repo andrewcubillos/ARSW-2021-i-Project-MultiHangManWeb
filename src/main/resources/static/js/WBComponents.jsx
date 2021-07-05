@@ -24,7 +24,7 @@ class WBCanvas extends React.Component {
                         (msg) => {
                 var obj = JSON.parse(msg);
                          console.log("On func call back ", msg);
-                        this.drawPoint(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
+                        this.drawPoint(obj.xi, obj.yi,obj.xii, obj.yii,obj.xiii, obj.yiii,obj.color1,obj.color2,obj.color3);
                 });
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'};
@@ -50,6 +50,12 @@ class WBCanvas extends React.Component {
             let ellipse1;
             let xi=250;
             let yi=75;
+            let xii=550;
+            let yii=75;
+            let xiii=850;
+            let yiii=75;
+           
+            
             
             
             p.setup = () => {
@@ -86,29 +92,36 @@ class WBCanvas extends React.Component {
                 
                 button1=p.createButton("submit");
                 button1.position(40+input1.width, 580);
-                button1.mousePressed(p.ahorcar);
+                button1.mousePressed(p.ahorcar1);
                 
                 button2=p.createButton("submit");
                 button2.position(340+input2.width, 580);
-                button2.mousePressed(p.ahorcar);
+                button2.mousePressed(p.ahorcar2);
+                
                 button3=p.createButton("submit");
                 button3.position(640+input3.width, 580);
-                button3.mousePressed(p.ahorcar(color1,color2,color3));
+                button3.mousePressed(p.ahorcar3);
                 
                 
             };
-            p.ahorcar=(color1,color2,color3)=>{
-                p.stroke(color1,color2,color3);
-                ellipse1=p.ellipse(xi,yi,50,50);
-                
-               
+            p.ahorcar1=()=>{
+                p.stroke();
+                ellipse1=p.ellipse(xi,yi,50,50);  
+            };
+            p.ahorcar2=()=>{
+                p.stroke();
+                ellipse1=p.ellipse(xi,yi,50,50);  
+            };
+            p.ahorcar3=()=>{
+                p.stroke();
+                ellipse1=p.ellipse(xi,yi,50,50);  
             };
             p.draw = () => {    
                 
                 if (p.mouseIsPressed === true) {
                     p.fill(color1, color2, color3);
                     p.ellipse(p.mouseX, p.mouseY, 20, 20);
-                    wsreference.send(xi,yi,color1,color2,color3); 
+                    wsreference.send(xi,yi,xii,yii,xiii,yiii.color1,color2,color3); 
                 }
                 if (p.mouseIsPressed === false) {
                     p.fill(255, 255, 255);
@@ -119,9 +132,11 @@ class WBCanvas extends React.Component {
                 
         };
     }
-    drawPoint(x, y,color1,color2,color3) {
+    drawPoint(x, y,x2,x3,x2,y3,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.ellipse(x, y, 50, 50);
+            this.myp5.ellipse(x2, y3, 50, 50);
+            this.myp5.ellipse(x3, y3, 50, 50);
     }
     
     componentDidMount() {
