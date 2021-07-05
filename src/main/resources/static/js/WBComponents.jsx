@@ -24,7 +24,9 @@ class WBCanvas extends React.Component {
                         (msg) => {
                 var obj = JSON.parse(msg);
                          console.log("On func call back ", msg);
-                        this.drawPoint(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
+                        this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
+                        this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
+                        
                 });
         
         this.myp5 = null;
@@ -121,17 +123,20 @@ class WBCanvas extends React.Component {
                 else if(wrong1===1){
                    
                     p.line(xi, y2, xi, y3);   
+                    wsreference.sendeline(xi,y2,color1,color2,color3);
                     
                 }
                 wrong1++;
             };
             function ahorcar2(){
+                xi=550;
                 p.stroke(color3,color1,color2);
                
                 p.ellipse(xi,yi,50,50); 
                 wsreference.sendelipse(xi,yi,color3,color1,color2); 
             };
             function ahorcar3(){
+                xi=850;
                  p.stroke(color2,color3,color1);
                  p.ellipse(xi,yi,50,50); 
                  wsreference.sendelipse(xi,yi,color2,color3,color1); 
@@ -148,9 +153,13 @@ class WBCanvas extends React.Component {
                 
         };
     }
-    drawPoint(x,y,color1,color2,color3) {
+    drawEllipse(x,y,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.ellipse(x, y, 50, 50);
+    }
+    drawLine(x1,y1,x2,y2,color1,color2,color3) {
+            this.myp5.stroke(color1,color2,color3);
+            this.myp5.line(x1, y1, x2, y2);
     }
     
     componentDidMount() {
@@ -200,6 +209,11 @@ class WSBBChannel {
     }
     sendelipse(xi, yi,color1,color2,color3) {
         let msg = '{ "xi": ' + (xi) + ', "yi": ' + (yi)  +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
+        console.log("sending: ", msg);
+        this.wsocket.send(msg);
+    }
+    sendeline(x1, y1,x2,y2,color1,color2,color3) {
+        let msg = '{ "x1": ' + (x1) + ', "y1": ' + (y1)  +', "x2": ' + (x2)  +', "y2": ' + (y2)  +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
