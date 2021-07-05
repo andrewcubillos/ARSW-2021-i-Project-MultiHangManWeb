@@ -141,7 +141,7 @@ class WBCanvas extends React.Component {
                 else if(wrong===5){
                    
                     p.line(x1, y3, x5, y5);   
-                    wsreference.sendeline(x1,y2,x5,y5,color1,color2,color3);
+                    wsreference.sendeline(x1,y3,x5,y5,c1,c2,c3);
                     
                 }
                 
