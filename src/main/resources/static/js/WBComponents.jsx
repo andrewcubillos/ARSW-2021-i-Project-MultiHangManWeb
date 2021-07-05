@@ -38,9 +38,9 @@ class WBCanvas extends React.Component {
             let min2=100;
             let max3=255;
             let min3=200;
-            let color1 = Math.round(Math.random() * (max - min) + min);
-            let color2 = Math.round(Math.random() * (max2 - min2) + min2);
-            let color3 = Math.round(Math.random() * (max3 - min3) + min3);
+            let color1 = 255;
+            let color2 = 255;
+            let color3 = 0;
             let button1;
             let button2;
             let button3;
