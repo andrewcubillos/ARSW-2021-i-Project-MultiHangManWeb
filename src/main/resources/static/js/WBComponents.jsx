@@ -82,7 +82,7 @@ class WBCanvas extends React.Component {
                 
                 button1=p.createButton("submit");
                 button1.position(40+input1.width, 580);
-                button1.mousePressed(ahorcar());
+                button1.mousePressed(ahorcar);
                 
                 button2=p.createButton("submit");
                 button2.position(340+input2.width, 580);
