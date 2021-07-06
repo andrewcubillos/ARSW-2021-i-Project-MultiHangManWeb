@@ -241,9 +241,9 @@ class WBCanvas extends React.Component {
 }
 const palabras=["colombia","china","japon","uruguay","argentina"];
 
-const word=Array.from(0);
-const word2=Array.from(1);
-const word3=Array.from(4);
+const word=Array.from(palabras[0]);
+const word2=Array.from(palabras[1]);
+const word3=Array.from(palabras[4]);
 const palabra1= new Array(word.length);
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
