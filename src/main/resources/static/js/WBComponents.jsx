@@ -55,6 +55,7 @@ class WBCanvas extends React.Component {
             let y3=240;
             let y4=160;
             let y5=290;
+            let palabram;
             
          
             
@@ -182,8 +183,8 @@ class WBCanvas extends React.Component {
                     p.textSize(42);
                     p.noStroke();
                     p.fill(0);
-                    p.text("",30,450);
-                    p.text(mostrar(L),30,450);
+                    palabram=mostrar(L);
+                    p.text(palabram,30,450);
                     
                     
                     
@@ -241,6 +242,7 @@ function buscar(lt) {
 function mostrar(letra){
     var pos=word1.indexOf(letra);
     palabra[pos]=letra;
+    print(palabra);
     return palabra.join('');
 }
 // Retorna la url del servicio. Es una función de configuración.
