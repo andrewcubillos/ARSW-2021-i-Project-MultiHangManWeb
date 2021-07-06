@@ -242,7 +242,7 @@ function buscar(lt) {
 function mostrar(letra){
     var pos=word1.indexOf(letra);
     palabra[pos]=letra;
-    print(palabra);
+    console.log(palabra);
     return palabra.join('');
 }
 // Retorna la url del servicio. Es una función de configuración.
