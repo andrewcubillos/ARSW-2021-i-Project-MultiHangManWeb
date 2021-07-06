@@ -2,7 +2,7 @@ class Editor extends React.Component {
     render() {
         return (
                 <div>
-                    <h1>            HANGMAN             </h1>
+                    <h1> HANGMAN </h1>
                    
                     <div id="toolstatus"></div>
                     
@@ -55,15 +55,12 @@ class WBCanvas extends React.Component {
             let y4=175;
             let y5=250;
             
-            
-            
-           
-           
+         
             
             p.setup = () => {
                 
                 p.createCanvas(1000, 500);
-              
+                p.background(0,255,255);
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
