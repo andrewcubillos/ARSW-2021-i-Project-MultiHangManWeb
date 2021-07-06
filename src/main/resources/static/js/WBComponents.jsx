@@ -108,6 +108,15 @@ class WBCanvas extends React.Component {
                 
                 
             };
+            
+            p.draw = () => {    
+                 
+                 button2.mousePressed(ahorcar2);
+                 button1.mousePressed(ahorcar1);
+                 button3.mousePressed(ahorcar3);
+                
+               
+            };
             function ahorcamiento(x1,x2,x3,x4,x5,c1,c2,c3,wrong){
                 p.stroke(c1,c2,c3);
                 if (wrong===0){
@@ -145,7 +154,7 @@ class WBCanvas extends React.Component {
                     p.line(x1-10, yi+10, x1+10, y2-10);   
                     wsreference.sendeline(x1-10, yi+10, x1+10, y2-10,c1,c2,c3);
                     p.line(x1+10, yi+10, x1-10, y2-10);   
-                    wsreference.sendeline(x1+10, yi, x1-10, y2-10,c1,c2,c3);
+                    wsreference.sendeline(x1+10, yi-10, x1-10, y2-10,c1,c2,c3);
                     
                     
                 }
@@ -170,14 +179,7 @@ class WBCanvas extends React.Component {
                 
             };
             
-            p.draw = () => {    
-                 
-                 button2.mousePressed(ahorcar2);
-                 button1.mousePressed(ahorcar1);
-                 button3.mousePressed(ahorcar3);
-                
-               
-            };
+            
             
             
                 
