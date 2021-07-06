@@ -39,8 +39,7 @@ class WBCanvas extends React.Component {
         
         
         this.sketch = function (p) {
-            let x = 100;
-            let y = 100;
+            
             let color1 = 125;
             let color2 = 50;
             let color3 = 0;
@@ -193,7 +192,7 @@ class WBCanvas extends React.Component {
                 }
                 else{
                     let mst=(mostrar(L,N));
-                    //wsreference.sendword(mst);
+                    wsreference.sendword(mst,40,180);
                     P.html(mst); 
                 }
                    
@@ -225,6 +224,15 @@ class WBCanvas extends React.Component {
     drawLine(x1,y1,x2,y2,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.line(x1, y1, x2, y2);
+    }
+    drawWord(mst,x,y) {
+                this.myp5.textSize(47);
+                this.myp5.noStroke();
+                this.myp5.fill(0);
+                this.myp5.createElement('h2', '');
+                this.myp5.position(40, 490);
+                this.myp5.html(mst);
+                   
     }
     
     componentDidMount() {
@@ -303,7 +311,7 @@ class WSBBChannel {
         // Este if permite que el primer mensaje del servidor no se tenga encuenta.
                 // El primer mensaje solo confirma que se estableció la conexión.
                 // De ahí en adelante intercambiaremos solo puntos(x,y) con el servidor
-                if (evt.data != "Connection established.") {
+                if (evt.data !== "Connection established.") {
         this.receivef(evt.data);
     }
     }
@@ -319,6 +327,9 @@ class WSBBChannel {
         let msg = '{ "x1": ' + (x1) + ', "y1": ' + (y1)  +', "x2": ' + (x2)  +', "y2": ' + (y2)  +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
+    }
+    sendWord(mst,x,y){
+        
     }
 }
 ReactDOM.render(
