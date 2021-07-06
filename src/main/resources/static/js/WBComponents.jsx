@@ -241,9 +241,9 @@ class WBCanvas extends React.Component {
 }
 const palabras=["colombia","china","japon","uruguay","argentina"];
 
-const word=Array.from(palabras[Math.floor(Math.random() * (palabras.lenght- 0) + 0)]);
-const word2=Array.from(palabras[Math.floor(Math.random() * (palabras.lenght- 0) + 0)]);
-const word3=Array.from(palabras[Math.floor(Math.random() * (palabras.lenght- 0) + 0)]);
+const word=Array.from(palabras[Math.floor(Math.random() * palabras.lenght)]);
+const word2=Array.from(palabras[Math.floor(Math.random() * palabras.lenght)]);
+const word3=Array.from(palabras[Math.floor(Math.random() * palabras.lenght)]);
 const palabra1= new Array(word.length);
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
