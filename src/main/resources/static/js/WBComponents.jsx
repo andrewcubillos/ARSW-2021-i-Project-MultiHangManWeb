@@ -62,7 +62,7 @@ class WBCanvas extends React.Component {
             p.setup = () => {
                 
                 p.createCanvas(1000, 500);
-                p.background(40,25,255);
+                p.background(40,25,2);
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
