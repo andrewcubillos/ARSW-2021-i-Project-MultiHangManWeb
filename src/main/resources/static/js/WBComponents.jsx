@@ -259,7 +259,7 @@ function buscar(lt,num) {
     }
 function mostrar(letra,num){
     var pal;
-   
+    var pos;
     if(num===1){
         pos=word.indexOf(letra);
         palabra1[pos]=letra;
