@@ -57,7 +57,7 @@ class WBCanvas extends React.Component {
             let mySound;
             
             p.preload=()=> {
-                soundFormats('mp3', 'ogg');
+                p.soundFormats('mp3', 'ogg');
                 mySound = p.loadSound('sounds/fail');
             };
             
