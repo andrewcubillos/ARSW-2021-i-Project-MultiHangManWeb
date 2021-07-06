@@ -2,7 +2,7 @@ class Editor extends React.Component {
     render() {
         return (
                 <div>
-                    <h1 style="text-align:center"> HANGMAN </h1>
+                    
                    
                     <div id="toolstatus"></div>
                     
