@@ -192,9 +192,8 @@ class WBCanvas extends React.Component {
                     
                 }
                 else{
-                    let mst=(mostrar(L,N));
-                    //wsreference.sendword(mst);
-                    P.html(mst); 
+                    
+                    P.html(mostrar(L,N)); 
                 }
                    
             }
@@ -218,7 +217,6 @@ class WBCanvas extends React.Component {
     }
     
     drawEllipse(x,y,color1,color2,color3) {
-            this.myp5.strokeWeight(2);
             this.myp5.stroke(color1,color2,color3);
             this.myp5.fill(0,255,255);
             this.myp5.ellipse(x, y, 50, 50);
