@@ -54,8 +54,12 @@ class WBCanvas extends React.Component {
             let y3=200;
             let y4=175;
             let y5=250;
+            let mySound;
             
-         
+            p.preload=()=> {
+                soundFormats('mp3', 'ogg');
+                mySound = p.loadSound('sounds/fail');
+            };
             
             p.setup = () => {
                 
@@ -158,6 +162,7 @@ class WBCanvas extends React.Component {
             function ahorcar1(){
                 
                 ahorcamiento(250,220,280,220,280,color1,color2,color3,wrong1);
+                mySound.play();
                 wrong1++;
                 
             };
