@@ -334,7 +334,9 @@ class WSBBChannel {
         this.wsocket.send(msg);
     }
     sendeword(mst,xx,yy) {
-        let msg = '{ "mst": ' + '"momo" ' + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
+        let momo="'"+mst+"'";
+        console.log(momo);
+        let msg = '{ "mst": ' + (momo) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
