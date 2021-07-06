@@ -185,7 +185,7 @@ class WBCanvas extends React.Component {
                     if(W==="wrong2"){
                         W=wrong2;
                         wrong2++;}
-                    if(W==="wrong2"){
+                    if(W==="wrong3"){
                         W=wrong3;
                         wrong2++;}
                     ahorcamiento(X1,X2,X3,X4,X5,C1,C2,C3,W);
