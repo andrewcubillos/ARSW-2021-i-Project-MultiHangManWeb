@@ -35,6 +35,8 @@ class WBCanvas extends React.Component {
         let wrong1=0;
         let wrong2=0;
         let wrong3=0;
+        let letter1,letter2,letter3;
+        
         
         
         this.sketch = function (p) {
@@ -60,7 +62,7 @@ class WBCanvas extends React.Component {
             p.setup = () => {
                 
                 p.createCanvas(1000, 500);
-                p.background(0,255,255);
+                p.background(40,25,255);
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
