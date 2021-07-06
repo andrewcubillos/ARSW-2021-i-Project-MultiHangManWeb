@@ -3,12 +3,12 @@ class Editor extends React.Component {
         return (
                 <div>
                     <h1>            HANGMAN             </h1>
-                    <hr/>
+                   
                     <div id="toolstatus"></div>
-                    <hr/>
+                    
                     <div id="container"></div>
                     <WBCanvas />
-                    <hr/>
+                   
                     <div id="info"></div>
                 </div>
                 );
@@ -40,7 +40,6 @@ class WBCanvas extends React.Component {
         this.sketch = function (p) {
             let x = 100;
             let y = 100;
-            
             let color1 = 125;
             let color2 = 50;
             let color3 = 0;
@@ -50,7 +49,6 @@ class WBCanvas extends React.Component {
             let input1;
             let input2;
             let input3;
-            
             let yi=75;
             let y2=110;
             let y3=200;
