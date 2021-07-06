@@ -26,6 +26,7 @@ class WBCanvas extends React.Component {
                          console.log("On func call back ", msg);
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
+                        this.drawWord(obj.mst,obj.xx,obj.yy);
                         
                 });
         
@@ -225,6 +226,14 @@ class WBCanvas extends React.Component {
     drawLine(x1,y1,x2,y2,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.line(x1, y1, x2, y2);
+    }
+    drawWord(p,x,y) {
+                this.myp5.textSize(47);
+                this.myp5.noStroke();
+                this.myp5.fill(0);
+                let pl=this.myp5.createElement('h2', '');
+                pl.position(x, y);
+                this.myp5.html(p); 
     }
     
     componentDidMount() {
