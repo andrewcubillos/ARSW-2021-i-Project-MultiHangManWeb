@@ -41,8 +41,8 @@ class WBCanvas extends React.Component {
             let x = 100;
             let y = 100;
             
-            let color1 = 255;
-            let color2 = 255;
+            let color1 = 125;
+            let color2 = 50;
             let color3 = 0;
             let button1;
             let button2;
