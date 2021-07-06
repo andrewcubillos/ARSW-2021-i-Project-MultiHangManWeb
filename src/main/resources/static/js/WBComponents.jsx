@@ -53,7 +53,7 @@ class WBCanvas extends React.Component {
             let y2=140;
             let y3=250;
             let y4=184;
-            let y5=350;
+            let y5=300;
             
          
             
