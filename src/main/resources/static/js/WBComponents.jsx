@@ -227,13 +227,14 @@ class WBCanvas extends React.Component {
     }
 }
 const word1=["c","o","l","o","m","b","i","a"];
+const palabra= new Array(word1.length);
+palabra.fill("-");
 function buscar(lt) {
-           
-           return word1.includes(lt);
+    return word1.includes(lt);
     }
-function mostrar(){
-    const palabra= new Array(word1.length);
-    palabra.fill("-");
+function mostrar(letra){
+    var pos=word1.indexOf(letra);
+    palabra[pos]=letra;
 }
 // Retorna la url del servicio. Es una función de configuración.
 function BBServiceURL() {
