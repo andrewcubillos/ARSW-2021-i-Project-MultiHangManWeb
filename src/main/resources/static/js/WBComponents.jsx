@@ -55,7 +55,9 @@ class WBCanvas extends React.Component {
             let y3=240;
             let y4=160;
             let y5=290;
-            let palabram;
+            let palabram1;
+            let palabram2;
+            let palabram3;
             
          
             
@@ -63,13 +65,16 @@ class WBCanvas extends React.Component {
                 
                 p.createCanvas(1000, 580);
                 p.background(0,255,255);
-                p.textSize(42);
+                p.textSize(47);
                 p.noStroke();
                 p.fill(0);
-                    
-               
-                palabram=p.createElement('h2', '');
-                palabram.position(30, 460);
+                palabram1=p.createElement('h2', '');
+                palabram1.position(40, 490);
+                palabram2=p.createElement('h2', '');
+                palabram2.position(340, 490);
+                palabram3=p.createElement('h2', '');
+                palabram3.position(640, 490);
+                
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
@@ -171,7 +176,7 @@ class WBCanvas extends React.Component {
                 
                 
             }
-            function palabra(L,X1,X2,X3,X4,X5,C1,C2,C3,W){
+            function palabra(L,P,X1,X2,X3,X4,X5,C1,C2,C3,W){
                
                 if(buscar(L)===false){
                     if(W==="wrong1"){
@@ -188,24 +193,19 @@ class WBCanvas extends React.Component {
                 }
                 else{
                     
-                    
-                    palabram.html(mostrar(L));
-                    
-                    
-                    
-                    
+                    p.html(mostrar(L)); 
                 }
                    
             }
             function ahorcar1(){
-                palabra(input1.value(),250,220,280,220,280,color1,color2,color3,"wrong1");
+                palabra(input1.value(),palabram1,250,220,280,220,280,color1,color2,color3,"wrong1");
             };
             function ahorcar2(){
-                palabra(input2.value(),550,520,580,520,580,color3,color1,color2,"wrong2");
+                palabra(input2.value(),palabram2,550,520,580,520,580,color3,color1,color2,"wrong2");
             
             };
             function ahorcar3(){
-                palabra(input3.value(),850,820,880,820,880,color2,color3,color1,"wrong3");
+                palabra(input3.value(),palabram3,850,820,880,820,880,color2,color3,color1,"wrong3");
              
             };
             
