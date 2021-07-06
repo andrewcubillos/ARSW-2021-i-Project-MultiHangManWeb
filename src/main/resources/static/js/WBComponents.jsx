@@ -22,11 +22,11 @@ class WBCanvas extends React.Component {
         this.comunicationWS =
                 new WSBBChannel(BBServiceURL(),
                         (msg) => {
-                var obj = JSON.parse(JSON.stringify(msg));
+                var obj = JSON.parse(msg);
                          console.log("On func call back ", msg);
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
-                        this.drawWord(obj.mst,obj.xx,obj.yy);
+                        this.drawWord(obj.mts,obj.xx,obj.yy);
                         
                 });
         
@@ -334,7 +334,8 @@ class WSBBChannel {
         this.wsocket.send(msg);
     }
     sendeword(mst,xx,yy) {
-        let msg = '{ "mst": ' + mst + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
+		let mts = mst.toString();
+        let msg = '{ "mst": ' + mts + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
