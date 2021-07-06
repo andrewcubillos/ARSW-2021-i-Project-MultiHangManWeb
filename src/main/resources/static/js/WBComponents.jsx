@@ -179,6 +179,8 @@ class WBCanvas extends React.Component {
                     
                 }
                 else{
+                    p.text(mostrar(L),40,580);
+                    
                     
                     
                 }
@@ -235,6 +237,7 @@ function buscar(lt) {
 function mostrar(letra){
     var pos=word1.indexOf(letra);
     palabra[pos]=letra;
+    return palabra.join('');
 }
 // Retorna la url del servicio. Es una función de configuración.
 function BBServiceURL() {
