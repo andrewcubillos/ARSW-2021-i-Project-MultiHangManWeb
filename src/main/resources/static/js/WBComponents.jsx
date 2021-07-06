@@ -32,9 +32,9 @@ class WBCanvas extends React.Component {
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'};
         let wsreference = this.comunicationWS; 
-        let wrong1=0;
-        let wrong2=0;
-        let wrong3=0;
+        let wrong1=-1;
+        let wrong2=-1;
+        let wrong3=-1;
         let letter1,letter2,letter3;
         
         
@@ -168,11 +168,22 @@ class WBCanvas extends React.Component {
             function palabra(L,X1,X2,X3,X4,X5,C1,C2,C3,W){
                
                 if(buscar(L)===false){
+                    if(W==="wrong1"){
+                        W=wrong1;
+                        wrong1++;}
+                    if(W==="wrong2"){
+                        W=wrong2;
+                        wrong2++;}
+                    if(W==="wrong2"){
+                        W=wrong2;
+                        wrong2++;}
                     ahorcamiento(X1,X2,X3,X4,X5,C1,C2,C3,W);
-                    if(W==="wrong1")wrong1++;
-                    if(W==="wrong2")wrong2++;
-                    if(W==="wrong2")wrong2++;
+                    
                 }
+                else{
+                    
+                }
+                   
             }
             function ahorcar1(){
                 
