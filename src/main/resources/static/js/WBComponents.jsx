@@ -175,7 +175,7 @@ class WBCanvas extends React.Component {
                         W=wrong2;
                         wrong2++;}
                     if(W==="wrong2"){
-                        W=wrong2;
+                        W=wrong3;
                         wrong2++;}
                     ahorcamiento(X1,X2,X3,X4,X5,C1,C2,C3,W);
                     
@@ -193,13 +193,13 @@ class WBCanvas extends React.Component {
             };
             function ahorcar2(){
                 
-                ahorcamiento(550,520,580,520,580,color3,color1,color2,"wrong2");
+                palabra(input2.value(),550,520,580,520,580,color3,color1,color2,"wrong2");
                
                 
             };
             function ahorcar3(){
                 
-                ahorcamiento(850,820,880,820,880,color2,color3,color1,"wrong3");
+                palabra(input3.value(),850,820,880,820,880,color2,color3,color1,"wrong3");
                 
                 
             };
