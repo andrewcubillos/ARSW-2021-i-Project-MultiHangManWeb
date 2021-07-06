@@ -27,7 +27,6 @@ class WBCanvas extends React.Component {
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
                         
-                        
                 });
         
         this.myp5 = null;
@@ -40,7 +39,8 @@ class WBCanvas extends React.Component {
         
         
         this.sketch = function (p) {
-            
+            let x = 100;
+            let y = 100;
             let color1 = 125;
             let color2 = 50;
             let color3 = 0;
@@ -176,7 +176,7 @@ class WBCanvas extends React.Component {
                 
                 
             }
-            function palabra(L,P,N,w1,w2,X1,X2,X3,X4,X5,C1,C2,C3,W){
+            function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W){
                
                 if(buscar(L,N)===false){
                     if(W==="wrong1"){
@@ -193,20 +193,20 @@ class WBCanvas extends React.Component {
                 }
                 else{
                     let mst=(mostrar(L,N));
-                    wsreference.sendword(mst,w1,w2);
+                    //wsreference.sendword(mst);
                     P.html(mst); 
                 }
                    
             }
             function ahorcar1(){
-                palabra(input1.value(),palabram1,1,40,580,250,220,280,220,280,color1,color2,color3,"wrong1");
+                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1");
             };
             function ahorcar2(){
-                palabra(input2.value(),palabram2,2,1,140,580,550,520,580,520,580,color3,color1,color2,"wrong2");
+                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2");
             
             };
             function ahorcar3(){
-                palabra(input3.value(),palabram3,3,640,580,850,820,880,820,880,color2,color3,color1,"wrong3");
+                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3");
              
             };
             
@@ -225,15 +225,6 @@ class WBCanvas extends React.Component {
     drawLine(x1,y1,x2,y2,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.line(x1, y1, x2, y2);
-    }
-    drawWord(mst,x,y) {
-                this.myp5.textSize(47);
-                this.myp5.noStroke();
-                this.myp5.fill(0);
-                this.myp5.createElement('h2', '');
-                this.myp5.position(40, 490);
-                this.myp5.html(mst);
-                   
     }
     
     componentDidMount() {
@@ -312,7 +303,7 @@ class WSBBChannel {
         // Este if permite que el primer mensaje del servidor no se tenga encuenta.
                 // El primer mensaje solo confirma que se estableció la conexión.
                 // De ahí en adelante intercambiaremos solo puntos(x,y) con el servidor
-                if (evt.data !== "Connection established.") {
+                if (evt.data != "Connection established.") {
         this.receivef(evt.data);
     }
     }
@@ -328,12 +319,6 @@ class WSBBChannel {
         let msg = '{ "x1": ' + (x1) + ', "y1": ' + (y1)  +', "x2": ' + (x2)  +', "y2": ' + (y2)  +  ', "color1": ' + (color1)+', "color2": ' + (color2)+', "color3": ' + (color3)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
-    }
-    sendword(mst,x,y){
-        let msg = '{ "mst": ' + (mst) + ', "x": ' + (x)  +', "y": ' + (y)+ "}";
-        console.log("sending: ", msg);
-        this.wsocket.send(msg);
-        
     }
 }
 ReactDOM.render(
