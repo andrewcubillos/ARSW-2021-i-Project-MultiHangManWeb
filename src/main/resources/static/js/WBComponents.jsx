@@ -231,9 +231,7 @@ class WBCanvas extends React.Component {
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
-                let pp=this.myp5.createElement('h2', '');
-                    pp.position(x, y);
-                    pp.html(p);
+                
                    
                     
     }
