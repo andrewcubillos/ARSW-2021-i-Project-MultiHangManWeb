@@ -176,9 +176,9 @@ class WBCanvas extends React.Component {
                 
                 
             }
-            function palabra(L,P,X1,X2,X3,X4,X5,C1,C2,C3,W){
+            function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W){
                
-                if(buscar(L)===false){
+                if(buscar(L,N)===false){
                     if(W==="wrong1"){
                         W=wrong1;
                         wrong1++;}
@@ -193,19 +193,19 @@ class WBCanvas extends React.Component {
                 }
                 else{
                     
-                    P.html(mostrar(L)); 
+                    P.html(mostrar(L,N)); 
                 }
                    
             }
             function ahorcar1(){
-                palabra(input1.value(),palabram1,250,220,280,220,280,color1,color2,color3,"wrong1");
+                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1");
             };
             function ahorcar2(){
-                palabra(input2.value(),palabram2,550,520,580,520,580,color3,color1,color2,"wrong2");
+                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2");
             
             };
             function ahorcar3(){
-                palabra(input3.value(),palabram3,850,820,880,820,880,color2,color3,color1,"wrong3");
+                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3");
              
             };
             
@@ -239,18 +239,44 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
-const word1=["c","o","l","o","m","b","i","a"];
-const palabra= new Array(word1.length);
-palabra.fill("-");
-function buscar(lt) {
-    return word1.includes(lt);
+const palabras=["colombia","china","japon","uruguay","argentina"];
+const word=Array.from(palabras[Math.random() * (palabras.lenght- 0) + 0]);
+const word2=Array.from(palabras[Math.random() * (palabras.lenght- 0) + 0]);
+const word3=Array.from(palabras[Math.random() * (palabras.lenght- 0) + 0]);
+const palabra1= new Array(word.length);
+const palabra2= new Array(word2.length);
+const palabra3= new Array(word3.length);
+palabra1.fill("-");
+palabra2.fill("-");
+palabra3.fill("-");
+function buscar(lt,num) {
+    var bool;
+    if(num===1)bool=word.includes(lt);
+    if(num===2)bool=word2.includes(lt);
+    if(num===3)bool=word3.includes(lt);
+    return bool;
     }
-function mostrar(letra){
-    var pos=word1.indexOf(letra);
-    palabra[pos]=letra;
-    console.log(palabra);
-    return palabra.join('');
+function mostrar(letra,num){
+    var pal;
+   
+    if(num===1){
+        pos=word.indexOf(letra);
+        palabra1[pos]=letra;
+        pal=palabra1;
+    }
+    if(num===2){
+        pos=word2.indexOf(letra);
+        palabra2[pos]=letra;
+        pal=palabra2;
+    }
+    if(num===3){
+        pos=word3.indexOf(letra);
+        palabra3[pos]=letra;
+        pal=palabra3;
+    }
+    return pal.join('');
 }
+
 // Retorna la url del servicio. Es una función de configuración.
 function BBServiceURL() {
     var host = window.location.host;
