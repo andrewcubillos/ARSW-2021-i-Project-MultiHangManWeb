@@ -166,9 +166,12 @@ class WBCanvas extends React.Component {
             }
             function ahorcar1(){
                 letter1=input1.value();
-                buscar(letter1);
+                
+                if(buscar(letter1)===false){
                 ahorcamiento(250,220,280,220,280,color1,color2,color3,wrong1);
                 wrong1++;
+                }
+                
                 
             };
             function ahorcar2(){
