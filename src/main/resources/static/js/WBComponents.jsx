@@ -155,10 +155,10 @@ class WBCanvas extends React.Component {
                    
                     p.line(x1, y3, x5, y5);   
                     wsreference.sendeline(x1,y3,x5,y5,c1,c2,c3);
-                    p.line(x1-10, yi-10, x1+10, y2-30);   
-                    wsreference.sendeline(x1-10, yi-10, x1+10, y2-30,c1,c2,c3);
-                    p.line(x1+10, yi-10, x1-10, y2-30);   
-                    wsreference.sendeline(x1+10, yi-10, x1-10, y2-30,c1,c2,c3);
+                    p.line(yi-10, x1-10, y2-30, x1+10);   
+                    wsreference.sendeline(yi-10, x1-10, y2-30, x1+10,c1,c2,c3);
+                    p.line(yi-10, x1+10, y2-30, x1-10);   
+                    wsreference.sendeline(yi-10, x1+10, y2-30, x1-10,c1,c2,c3);
                     
                     
                 }
