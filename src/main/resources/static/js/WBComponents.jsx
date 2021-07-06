@@ -319,6 +319,11 @@ class WSBBChannel {
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
+    sendeword(mst,xx,yy) {
+        let msg = '{ "mst": ' + (mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
+        console.log("sending: ", msg);
+        this.wsocket.send(msg);
+    }
 }
 ReactDOM.render(
         <Editor name="Andres"/>,
