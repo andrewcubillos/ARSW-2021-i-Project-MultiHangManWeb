@@ -328,7 +328,7 @@ class WSBBChannel {
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
-    sendWord(mst,x,y){
+    sendword(mst,x,y){
         
     }
 }
