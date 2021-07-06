@@ -49,11 +49,11 @@ class WBCanvas extends React.Component {
             let input1;
             let input2;
             let input3;
-            let yi=75;
-            let y2=110;
-            let y3=200;
-            let y4=175;
-            let y5=250;
+            let yi=105;
+            let y2=150;
+            let y3=250;
+            let y4=205;
+            let y5=290;
             
          
             
@@ -66,7 +66,7 @@ class WBCanvas extends React.Component {
                 p.line(40, 30, 40, 370);         
                 p.line(40, 30, 260, 30);
                 p.line(40, 100, 100, 30);
-                p.line(250, 30, 250, 50);
+                p.line(250, 30, 250, 90);
                 
                 
                 p.stroke(color3,color1,color2);
