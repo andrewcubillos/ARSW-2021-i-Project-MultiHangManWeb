@@ -35,8 +35,6 @@ class WBCanvas extends React.Component {
         let wrong1=0;
         let wrong2=0;
         let wrong3=0;
-        let letter1,letter2,letter3;
-        
         
         
         
@@ -187,21 +185,15 @@ class WBCanvas extends React.Component {
                    
             }
             function ahorcar1(){
-                
                 palabra(input1.value(),250,220,280,220,280,color1,color2,color3,"wrong1");
-             
             };
             function ahorcar2(){
-                
                 palabra(input2.value(),550,520,580,520,580,color3,color1,color2,"wrong2");
-               
-                
+            
             };
             function ahorcar3(){
-                
                 palabra(input3.value(),850,820,880,820,880,color2,color3,color1,"wrong3");
-                
-                
+             
             };
             
             
@@ -234,10 +226,15 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
+const word1=["c","o","l","o","m","b","i","a"];
 function buscar(lt) {
-           const word1=["c","o","l","o","m","b","i","a"];
+           
            return word1.includes(lt);
     }
+function mostrar(){
+    const palabra= new Array(word1.length);
+    palabra.fill("-");
+}
 // Retorna la url del servicio. Es una función de configuración.
 function BBServiceURL() {
     var host = window.location.host;
