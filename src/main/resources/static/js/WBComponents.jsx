@@ -100,7 +100,7 @@ class WBCanvas extends React.Component {
                 
                 
                 button2=p.createButton("submit");
-                button2.position(140+input2.width, 580);
+                button2.position(340+input2.width, 580);
            
                 
                 button3=p.createButton("submit");
