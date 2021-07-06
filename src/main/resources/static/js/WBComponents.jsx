@@ -55,7 +55,7 @@ class WBCanvas extends React.Component {
             let y3=240;
             let y4=160;
             let y5=290;
-            let palabram;
+            let palabram = p.createElement('h2', '');
             
          
             
@@ -183,10 +183,8 @@ class WBCanvas extends React.Component {
                     p.textSize(42);
                     p.noStroke();
                     p.fill(0);
-                    palabram = p.createElement('h2', 'what is your name?');
-                    palabram.position(20, 5);
-
                     
+                    palabram.position(30, 460);
                     textSize(50);
                     palabram.html(mostrar(L));
                     
