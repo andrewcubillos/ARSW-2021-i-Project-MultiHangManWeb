@@ -162,7 +162,7 @@ class WBCanvas extends React.Component {
                     //wsreference.sendeline(x1+20, yi-10, x1, y2-30,c1,c2,c3);
                     
                 }
-                wrong1++;
+                wrong++;
                 
             }
             function palabra(){
