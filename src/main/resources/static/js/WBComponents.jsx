@@ -192,8 +192,9 @@ class WBCanvas extends React.Component {
                     
                 }
                 else{
-                    
-                    P.html(mostrar(L,N)); 
+                    var word=mostrar(L,N);
+                    P.html(word); 
+                    sendeword(word,40,580);
                 }
                    
             }
@@ -239,7 +240,7 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
-const palabras=["colombia","china","japon","uruguay","argentina"];
+const palabras=["peru","china","japon","quito","dubai"];
 
 const word=Array.from(palabras[0]);
 const word2=Array.from(palabras[1]);
