@@ -26,7 +26,7 @@ class WBCanvas extends React.Component {
                          console.log("On func call back ", msg);
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
-                        this.drawWord(obj.mts,obj.xx,obj.yy);
+                        this.drawWord(obj.mst,obj.xx,obj.yy);
                         
                 });
         
@@ -334,8 +334,7 @@ class WSBBChannel {
         this.wsocket.send(msg);
     }
     sendeword(mst,xx,yy) {
-        let mts= "'"+mst+ "'";
-        let msg = '{ "mst": ' + ( mts) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
+        let msg = '{ "mst": ' + (String(mst)) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
