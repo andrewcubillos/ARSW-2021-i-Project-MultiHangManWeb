@@ -114,7 +114,7 @@ class WBCanvas extends React.Component {
             };
             function ahorcamiento(x1,x2,x3,x4,x5,c1,c2,c3,wrong){
                 p.stroke(c1,c2,c3);
-                p.fill(c1,c2,c3);
+                p.fill(0,255,255);
                 if (wrong===0){
                     
                     p.ellipse(x1,yi,50,50);
@@ -184,7 +184,7 @@ class WBCanvas extends React.Component {
     }
     drawEllipse(x,y,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
-            this.myp5.fill(color1,color2,color3);
+            this.myp5.fill(0,255,255);
             this.myp5.ellipse(x, y, 50, 50);
     }
     drawLine(x1,y1,x2,y2,color1,color2,color3) {
