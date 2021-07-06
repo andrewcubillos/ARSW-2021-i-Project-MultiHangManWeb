@@ -64,20 +64,20 @@ class WBCanvas extends React.Component {
                 p.strokeWeight(10);
                 p.stroke(color1,color2,color3);
                 p.line(40, 30, 40, 370);         
-                p.line(40, 30, 250, 30);
+                p.line(40, 30, 260, 30);
                 p.line(40, 100, 100, 30);
                 p.line(250, 30, 250, 50);
                 
                 
                 p.stroke(color3,color1,color2);
                 p.line(340, 30, 340, 370);         
-                p.line(340, 30, 550, 30);
+                p.line(340, 30, 560, 30);
                 p.line(340, 100, 400, 30);
                 p.line(550, 30, 550, 50);
                 
                 p.stroke(color2,color3,color1);
                 p.line(640, 30, 640, 370);         
-                p.line(640, 30, 850, 30);
+                p.line(640, 30, 860, 30);
                 p.line(640, 100, 700, 30);
                 p.line(850, 30, 850, 50);
                 
