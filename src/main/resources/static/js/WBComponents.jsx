@@ -180,7 +180,7 @@ class WBCanvas extends React.Component {
             function ahorcar2(){
                 
                 ahorcamiento(550,520,580,520,580,color3,color1,color2,wrong2);
-                
+                wrong2++;
                 
                 
             };
