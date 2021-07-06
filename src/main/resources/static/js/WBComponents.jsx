@@ -193,7 +193,7 @@ class WBCanvas extends React.Component {
                 }
                 else{
                     
-                    p.html(mostrar(L)); 
+                    P.html(mostrar(L)); 
                 }
                    
             }
