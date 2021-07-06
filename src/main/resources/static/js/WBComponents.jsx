@@ -192,8 +192,9 @@ class WBCanvas extends React.Component {
                     
                 }
                 else{
-                    
-                    P.html(mostrar(L,N)); 
+                    let mst=(mostrar(L,N));
+                    //wsreference.sendword(mst);
+                    P.html(mst); 
                 }
                    
             }
