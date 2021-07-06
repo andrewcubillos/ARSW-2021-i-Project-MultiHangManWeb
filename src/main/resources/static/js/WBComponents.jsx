@@ -32,9 +32,9 @@ class WBCanvas extends React.Component {
         this.myp5 = null;
         this.state = {loadingState: 'Loading Canvas ...'};
         let wsreference = this.comunicationWS; 
-        let wrong1=-1;
-        let wrong2=-1;
-        let wrong3=-1;
+        let wrong1=0;
+        let wrong2=0;
+        let wrong3=0;
         let letter1,letter2,letter3;
         
         
@@ -181,6 +181,7 @@ class WBCanvas extends React.Component {
                     
                 }
                 else{
+                    
                     
                 }
                    
