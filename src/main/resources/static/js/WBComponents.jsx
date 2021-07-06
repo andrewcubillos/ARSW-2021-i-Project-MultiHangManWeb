@@ -162,16 +162,19 @@ class WBCanvas extends React.Component {
                     //wsreference.sendeline(x1+20, yi-10, x1, y2-30,c1,c2,c3);
                     
                 }
-                wrong++;
+                
                 
             }
-            function palabra(){
-                
+            function palabra(L,X1,X2,X3,X4,X5,C1,C2,C3,W){
+               
+                if(buscar(L)===false){
+                    ahorcamiento(X1,X2,X3,X4,X5,C1,C2,C3,W);
+                    W++;
+                }
             }
             function ahorcar1(){
-                letter1=input1.value();
-                if(buscar(letter1)===false){
-                ahorcamiento(250,220,280,220,280,color1,color2,color3,wrong1);
+                
+                palabra(input1.value(),250,220,280,220,280,color1,color2,color3,wrong1);
                 
                 }
                 
@@ -181,13 +184,13 @@ class WBCanvas extends React.Component {
                 
                 ahorcamiento(550,520,580,520,580,color3,color1,color2,wrong2);
                 
-                wrong2++;
+                
                 
             };
             function ahorcar3(){
                 
                 ahorcamiento(850,820,880,820,880,color2,color3,color1,wrong3);
-                wrong3++;
+                
                 
             };
             
