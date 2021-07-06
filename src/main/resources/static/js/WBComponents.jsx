@@ -240,7 +240,7 @@ class WBCanvas extends React.Component {
     }
 }
 const palabras=["colombia","china","japon","uruguay","argentina"];
-console.log(palabras[Math.random() * (palabras.lenght- 0) + 0]);
+let random= palabras[Math.random() * (4- 0) + 0];
 const word=Array.from(palabras[1]);
 const word2=Array.from(palabras[2]);
 const word3=Array.from(palabras[0]);
