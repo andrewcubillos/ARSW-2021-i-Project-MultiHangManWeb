@@ -195,7 +195,7 @@ class WBCanvas extends React.Component {
                 else{
                     var word=mostrar(L,N);
                     P.html(word); 
-                    let splitString = split(word, '');
+                    let splitString = p.split(word, '');
                    wsreference.sendeword(splitString,40,580);
                 }
                    
@@ -235,7 +235,7 @@ class WBCanvas extends React.Component {
                 let palabram=this.myp5.createElement('h2', '');
                 palabram.position(x, y);
                 let separator = ' ';
-                let wordd = join(p, separator);
+                let wordd = this.myp5.join(p, separator);
                 palabram.html(wordd); 
     }
     
