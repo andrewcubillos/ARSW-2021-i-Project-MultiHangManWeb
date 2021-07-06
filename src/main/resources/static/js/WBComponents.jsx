@@ -182,7 +182,8 @@ class WBCanvas extends React.Component {
                     p.textSize(42);
                     p.noStroke();
                     p.fill(0);
-                    p.text(mostrar(L),40,450);
+                    p.text("",30,450);
+                    p.text(mostrar(L),30,450);
                     
                     
                     
