@@ -36,7 +36,7 @@ class WBCanvas extends React.Component {
         let wrong2=0;
         let wrong3=0;
         let letter1,letter2,letter3;
-        
+        let word1=["c","o","l","o","m","b","i","a"];
         
         
         this.sketch = function (p) {
@@ -52,10 +52,10 @@ class WBCanvas extends React.Component {
             let input2;
             let input3;
             let yi=105;
-            let y2=140;
-            let y3=250;
-            let y4=170;
-            let y5=300;
+            let y2=130;
+            let y3=240;
+            let y4=160;
+            let y5=290;
             
          
             
