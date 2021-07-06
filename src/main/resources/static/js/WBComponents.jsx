@@ -36,7 +36,8 @@ class WBCanvas extends React.Component {
         let wrong2=0;
         let wrong3=0;
         let letter1,letter2,letter3;
-        let word1=["c","o","l","o","m","b","i","a"];
+        
+        
         
         
         this.sketch = function (p) {
@@ -153,19 +154,19 @@ class WBCanvas extends React.Component {
                 }
                 else if(wrong===5){
                    
-                    p.line(x1, y3, x5, y5);   
+                     p.line(x1, y3, x5, y5);   
                     wsreference.sendeline(x1,y3,x5,y5,c1,c2,c3);
-                    p.line(yi-10, x1-10, y2-30, x1+10);   
-                    wsreference.sendeline(yi-10, x1-10, y2-30, x1+10,c1,c2,c3);
-                    p.line(yi-10, x1+10, y2-30, x1-10);   
-                    wsreference.sendeline(yi-10, x1+10, y2-30, x1-10,c1,c2,c3);
-                    
+                    p.line(x1-10, yi-10, x1+10, y2-30);   
+                    wsreference.sendeline(x1-10, yi-10, x1+10, y2-30,c1,c2,c3);
+                    p.line(x1+10, yi-10, x1-10, y2-30);   
+                    wsreference.sendeline(x1+10, yi-10, x1-10, y2-30,c1,c2,c3);
                     
                 }
                 
             }
             function ahorcar1(){
                 letter1=input1.value();
+                buscar(letter1);
                 ahorcamiento(250,220,280,220,280,color1,color2,color3,wrong1);
                 wrong1++;
                 
@@ -173,6 +174,7 @@ class WBCanvas extends React.Component {
             function ahorcar2(){
                 
                 ahorcamiento(550,520,580,520,580,color3,color1,color2,wrong2);
+                
                 wrong2++;
                 
             };
@@ -189,6 +191,7 @@ class WBCanvas extends React.Component {
                 
         };
     }
+    
     drawEllipse(x,y,color1,color2,color3) {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.fill(0,255,255);
@@ -212,7 +215,10 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
-
+function buscar(lt) {
+           const word1=["c","o","l","o","m","b","i","a"];
+           return word1.includes(lt);
+    }
 // Retorna la url del servicio. Es una función de configuración.
 function BBServiceURL() {
     var host = window.location.host;
