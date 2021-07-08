@@ -334,8 +334,12 @@ class WSBBChannel {
         this.wsocket.send(msg);
     }
     sendeword(mst,xx,yy) {
-		let mts = mst.toString();
-        let msg = '{ "mst": ' + mts + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
+	var msg= {
+            mts: mst,
+            xx: xx,
+            yy: yy
+        };
+        
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
