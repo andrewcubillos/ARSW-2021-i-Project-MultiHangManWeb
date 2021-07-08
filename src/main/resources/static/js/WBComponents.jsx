@@ -339,9 +339,9 @@ class WSBBChannel {
             xx: xx,
             yy: yy
         };
-        
-        console.log("sending: ", msg);
-        this.wsocket.send(msg);
+       
+        console.log("sending: ",  JSON.stringify(msg));
+        this.wsocket.send( JSON.stringify(msg));
     }
 }
 ReactDOM.render(
