@@ -232,6 +232,9 @@ class WBCanvas extends React.Component {
             this.myp5.line(x1, y1, x2, y2);
     }
     drawWord(p,x,y) {
+                console.log(p);
+                 console.log(x);
+                  console.log(y);
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
