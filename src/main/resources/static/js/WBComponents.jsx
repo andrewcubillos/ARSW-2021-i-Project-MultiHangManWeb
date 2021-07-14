@@ -343,7 +343,7 @@ class WSBBChannel {
             "yy": yy
         };
        
-        console.log("sending: ",  msg.mts);
+        console.log("sending: ",  JSON.stringify(msg.mts));
         this.wsocket.send( msg);
     }
 }
