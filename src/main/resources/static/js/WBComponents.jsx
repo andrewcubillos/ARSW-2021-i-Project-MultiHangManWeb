@@ -338,7 +338,7 @@ class WSBBChannel {
     }
     sendeword(mst,xx,yy) {
 	var msg= {
-            "mts": mst.toString(),
+            "mts": (mst.toString()),
             "xx": xx,
             "yy": yy
         };
