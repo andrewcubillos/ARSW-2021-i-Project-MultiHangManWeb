@@ -199,7 +199,7 @@ class WBCanvas extends React.Component {
                 else{
                     var word=mostrar(L,N);
                     P.html(word); 
-                   wsreference.sendeword(word,40,580);
+                   wsreference.sendeword(word,40,480);
                 }
                    
             }
