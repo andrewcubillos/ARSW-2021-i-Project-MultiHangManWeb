@@ -23,7 +23,7 @@ class WBCanvas extends React.Component {
                 new WSBBChannel(BBServiceURL(),
                         (msg) => {
                 var obj = msg;
-                         console.log("On func call back ", msg);
+                         console.log("On func call back ", msg.mts);
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
                         this.drawWord(obj.mts,obj.xx,obj.yy);
