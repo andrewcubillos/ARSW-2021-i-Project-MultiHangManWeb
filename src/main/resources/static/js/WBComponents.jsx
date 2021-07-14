@@ -24,7 +24,6 @@ class WBCanvas extends React.Component {
                         (msg) => {
                 var obj = msg;
                          console.log("On func call back ", msg);
-                         console.log(obj[0],obj[1],obj[2]);
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
                         this.drawWord(obj.mts,obj.xx,obj.yy);
@@ -345,7 +344,7 @@ class WSBBChannel {
         };
        
         console.log("sending: ",  msg.mts);
-        this.wsocket.send( JSON.stringify(msg));
+        this.wsocket.send( msg);
     }
 }
 ReactDOM.render(
