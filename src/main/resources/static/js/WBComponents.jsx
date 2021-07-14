@@ -337,11 +337,7 @@ class WSBBChannel {
         this.wsocket.send(msg);
     }
     sendeword(mst,xx,yy) {
-	var msg= {
-            "mts": (mst.toString()),
-            "xx": xx,
-            "yy": yy
-        };
+	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
        
         console.log("sending: ",  JSON.stringify(msg.mts));
         this.wsocket.send( msg);
