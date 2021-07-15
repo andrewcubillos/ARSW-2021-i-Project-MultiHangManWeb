@@ -241,7 +241,7 @@ class WBCanvas extends React.Component {
                 let palabram=this.myp5.createElement('h2', '');
                 palabram.position(x, y);
                 palabram.html(p); 
-    }
+        }
     
     componentDidMount() {
         
