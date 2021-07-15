@@ -36,6 +36,7 @@ class WBCanvas extends React.Component {
         let wrong1=0;
         let wrong2=0;
         let wrong3=0;
+		let palabram=this.myp5.createElement('h2', '');
         
         
         
@@ -238,7 +239,7 @@ class WBCanvas extends React.Component {
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
-                let palabram=this.myp5.createElement('h2', '');
+                
                 palabram.position(x, y);
                 palabram.html(p);
 				palabram.html('h');
