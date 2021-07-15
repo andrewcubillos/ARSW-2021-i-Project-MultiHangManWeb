@@ -36,6 +36,7 @@ class WBCanvas extends React.Component {
         let wrong1=0;
         let wrong2=0;
         let wrong3=0;
+        let palabram=this.myp5.createElement('h2', '');
         
         
         
@@ -232,13 +233,14 @@ class WBCanvas extends React.Component {
             this.myp5.line(x1, y1, x2, y2);
     }
     drawWord(p,x,y) {
+        
                 console.log(p);
                  console.log(x);
                   console.log(y);
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
-                let palabram=this.myp5.createElement('h2', '');
+                
                 palabram.position(x, y);
                 palabram.html(p); 
         }
