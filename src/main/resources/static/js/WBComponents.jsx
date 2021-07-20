@@ -208,14 +208,14 @@ class WBCanvas extends React.Component {
                    
             }
             function ahorcar1(){
-                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40,palabraw1);
+                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40,"palabraw1");
             };
             function ahorcar2(){
-                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340,palabraw2);
+                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340,"palabraw2");
             
             };
             function ahorcar3(){
-                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640,palabraw3);
+                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640,"palabraw3");
              
             };
             
@@ -241,8 +241,18 @@ class WBCanvas extends React.Component {
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
+                
                 pw.position(x, y);
-                pw.html(p); 
+                if (x===40){
+                   palabraw1.html(p);  
+                }
+                else if(x===340){
+                   palabraw2.html(p);   
+                }
+                else if(x===640){
+                   palabraw3.html(p);   
+                }
+                
     }
     
     componentDidMount() {
@@ -340,7 +350,7 @@ class WSBBChannel {
         this.wsocket.send(msg);
     }
     sendeword(mst,xx,yy,pw) {
-	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ ', "pw": ' + (pw)+ "}";
+	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ ', "pw": ' + JSON.stringify(pw)+ "}";
        
         console.log("sending: ",  msg);
         this.wsocket.send( msg);
