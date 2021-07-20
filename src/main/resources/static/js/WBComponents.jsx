@@ -242,14 +242,17 @@ class WBCanvas extends React.Component {
                 this.myp5.noStroke();
                 this.myp5.fill(0);
                 
-                pw.position(x, y);
+                
                 if (x===40){
+                    palabraw1.position(x, y);
                    palabraw1.html(p);  
                 }
                 else if(x===340){
+                   palabraw2.position(x, y);
                    palabraw2.html(p);   
                 }
                 else if(x===640){
+                    palabraw3.position(x, y);
                    palabraw3.html(p);   
                 }
                 
