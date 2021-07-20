@@ -14,7 +14,7 @@ class Editor extends React.Component {
                 );
     }
 }
-let ci;
+let palabraw1,palabraw2,palabraw3;
 class WBCanvas extends React.Component {
     
     constructor(props) {
@@ -27,7 +27,7 @@ class WBCanvas extends React.Component {
                          console.log("On func call back ", obj);
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
-                        this.drawWord(obj.mst,obj.xx,obj.yy);
+                        this.drawWord(obj.mst,obj.xx,obj.yy,obj.pw);
                         
                 });
         
@@ -69,7 +69,9 @@ class WBCanvas extends React.Component {
                 p.textSize(47);
                 p.noStroke();
                 p.fill(0);
-                ci=p.createElement('h2', '');
+                palabraw1=p.createElement('h2', '');
+                palabraw2=p.createElement('h2', '');
+                palabraw3=p.createElement('h2', '');
                 palabram1=p.createElement('h2', '');
                 palabram1.position(40, 490);
                 palabram2=p.createElement('h2', '');
@@ -123,6 +125,7 @@ class WBCanvas extends React.Component {
                 
                 
             };
+            
             
             p.draw = () => {    
                  
@@ -182,7 +185,7 @@ class WBCanvas extends React.Component {
                 
                 
             }
-            function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W,wx){
+            function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W,wx,pw){
                
                 if(buscar(L,N)===false){
                     if(W==="wrong1"){
@@ -200,19 +203,19 @@ class WBCanvas extends React.Component {
                 else{
                     var word=mostrar(L,N);
                     P.html(word); 
-                   wsreference.sendeword(word,wx,490);
+                   wsreference.sendeword(word,wx,490,pw);
                 }
                    
             }
             function ahorcar1(){
-                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40);
+                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40,palabraw1);
             };
             function ahorcar2(){
-                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340);
+                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340,palabraw2);
             
             };
             function ahorcar3(){
-                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640);
+                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640,palabraw3);
              
             };
             
@@ -232,15 +235,14 @@ class WBCanvas extends React.Component {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.line(x1, y1, x2, y2);
     }
-    drawWord(p,x,y) {
+    drawWord(p,x,y,pw) {
                 
                 
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
-                ci.position(x, y);
-                
-                ci.html(p); 
+                pw.position(x, y);
+                pw.html(p); 
     }
     
     componentDidMount() {
@@ -337,8 +339,8 @@ class WSBBChannel {
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
-    sendeword(mst,xx,yy) {
-	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ "}";
+    sendeword(mst,xx,yy,pw) {
+	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ ', "pw": ' + (pw)+ "}";
        
         console.log("sending: ",  msg);
         this.wsocket.send( msg);
