@@ -15,12 +15,11 @@ class Editor extends React.Component {
     }
 }
 let palabraw1,palabraw2,palabraw3;
-var mydata = JSON.parse(data);
-alert(mydata[0].name);
-alert(mydata[0].age);
-alert(mydata[1].name);
-alert(mydata[1].age);
-      
+var fr = new FileReader(); 
+fr.onload = function(e) {     
+    console.log(e.target.result); 
+}; 
+fr.readAsText("Nuevo documento de texto.txt");
 class WBCanvas extends React.Component {
     
     constructor(props) {
