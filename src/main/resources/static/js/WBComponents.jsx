@@ -15,6 +15,7 @@ class Editor extends React.Component {
     }
 }
 let palabraw1,palabraw2,palabraw3;
+paisses();
 class WBCanvas extends React.Component {
     
     constructor(props) {
