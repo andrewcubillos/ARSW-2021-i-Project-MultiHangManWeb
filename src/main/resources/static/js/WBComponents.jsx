@@ -15,11 +15,6 @@ class Editor extends React.Component {
     }
 }
 let palabraw1,palabraw2,palabraw3;
-var fr = new FileReader(); 
-fr.onload = function(e) {     
-    console.log(e.target.result); 
-}; 
-fr.readAsText("./Nuevo documento de texto.txt");
 
       
 class WBCanvas extends React.Component {
