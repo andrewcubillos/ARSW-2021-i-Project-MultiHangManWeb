@@ -14,7 +14,7 @@ class Editor extends React.Component {
                 );
     }
 }
-let ci=0;
+let ci = createElement('h2', '');
 class WBCanvas extends React.Component {
     
     constructor(props) {
@@ -233,9 +233,7 @@ class WBCanvas extends React.Component {
     }
     drawWord(p,x,y) {
                 let c=0;
-                console.log(p);
-                 console.log(x);
-                  console.log(y);
+                
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
