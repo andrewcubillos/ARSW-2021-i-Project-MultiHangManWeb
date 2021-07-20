@@ -14,7 +14,7 @@ class Editor extends React.Component {
                 );
     }
 }
-let ci = createElement('h2', '');
+let ci;
 class WBCanvas extends React.Component {
     
     constructor(props) {
@@ -69,6 +69,7 @@ class WBCanvas extends React.Component {
                 p.textSize(47);
                 p.noStroke();
                 p.fill(0);
+                ci=p.createElement('h2', '');
                 palabram1=p.createElement('h2', '');
                 palabram1.position(40, 490);
                 palabram2=p.createElement('h2', '');
