@@ -332,7 +332,7 @@ class WSBBChannel {
     }
     onOpen(evt) {
         console.log("In onOpen", evt);
-        this.wsocket.Connection.setMaxIdleTime(500000); 
+        this.wsocket.client.max.idle.timeout(200000);
     }
     onMessage(evt) {
         console.log("In onMessage", evt);
