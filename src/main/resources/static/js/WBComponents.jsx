@@ -27,7 +27,7 @@ class WBCanvas extends React.Component {
                          console.log("On func call back ", obj);
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
-                        this.drawWord(obj.mst,obj.xx,obj.yy,obj.pw);
+                        this.drawWord(obj.mst,obj.xx,obj.yy);
                         
                 });
         
@@ -185,7 +185,7 @@ class WBCanvas extends React.Component {
                 
                 
             }
-            function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W,wx,pw){
+            function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W,wx){
                
                 if(buscar(L,N)===false){
                     if(W==="wrong1"){
@@ -203,19 +203,22 @@ class WBCanvas extends React.Component {
                 else{
                     var word=mostrar(L,N);
                     P.html(word); 
-                   wsreference.sendeword(word,wx,490,pw);
+                   wsreference.sendeword(word,wx,490);
                 }
                    
             }
             function ahorcar1(){
-                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40,"palabraw1");
+                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40);
+                input1.values('');
             };
             function ahorcar2(){
-                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340,"palabraw2");
+                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340);
+                input2.values('');
             
             };
             function ahorcar3(){
-                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640,"palabraw3");
+                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640);
+                input3.values('');
              
             };
             
@@ -235,7 +238,7 @@ class WBCanvas extends React.Component {
             this.myp5.stroke(color1,color2,color3);
             this.myp5.line(x1, y1, x2, y2);
     }
-    drawWord(p,x,y,pw) {
+    drawWord(p,x,y) {
                 
                 
                 this.myp5.textSize(47);
@@ -352,8 +355,8 @@ class WSBBChannel {
         console.log("sending: ", msg);
         this.wsocket.send(msg);
     }
-    sendeword(mst,xx,yy,pw) {
-	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+ ', "pw": ' + JSON.stringify(pw)+ "}";
+    sendeword(mst,xx,yy) {
+	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+  "}";
        
         console.log("sending: ",  msg);
         this.wsocket.send( msg);
