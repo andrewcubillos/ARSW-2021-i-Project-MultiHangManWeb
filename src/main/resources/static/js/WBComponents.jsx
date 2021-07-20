@@ -209,16 +209,16 @@ class WBCanvas extends React.Component {
             }
             function ahorcar1(){
                 palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40);
-                input1.values('');
+                input1.value('');
             };
             function ahorcar2(){
                 palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340);
-                input2.values('');
+                input2.value('');
             
             };
             function ahorcar3(){
                 palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640);
-                input3.values('');
+                input3.value('');
              
             };
             
