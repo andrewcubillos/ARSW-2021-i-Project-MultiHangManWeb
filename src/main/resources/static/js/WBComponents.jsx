@@ -14,6 +14,7 @@ class Editor extends React.Component {
                 );
     }
 }
+let ci=0;
 class WBCanvas extends React.Component {
     
     constructor(props) {
@@ -40,8 +41,7 @@ class WBCanvas extends React.Component {
         
         
         this.sketch = function (p) {
-            let x = 100;
-            let y = 100;
+            
             let color1 = 125;
             let color2 = 50;
             let color3 = 0;
@@ -232,6 +232,7 @@ class WBCanvas extends React.Component {
             this.myp5.line(x1, y1, x2, y2);
     }
     drawWord(p,x,y) {
+                let c=0;
                 console.log(p);
                  console.log(x);
                   console.log(y);
@@ -240,6 +241,7 @@ class WBCanvas extends React.Component {
                 this.myp5.fill(0);
                 let palabram=this.myp5.createElement('h2', '');
                 palabram.position(x, y);
+                ci=2;
                 palabram.html(p); 
     }
     
@@ -248,6 +250,7 @@ class WBCanvas extends React.Component {
         this.myp5 = new p5(this.sketch, 'container');
         this.setState({loadingState: 'Canvas Loaded'});
     }
+    
     render()
     {
         return(
