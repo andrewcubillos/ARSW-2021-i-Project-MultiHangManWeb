@@ -15,6 +15,13 @@ class Editor extends React.Component {
     }
 }
 let palabraw1,palabraw2,palabraw3;
+var fr = new FileReader(); 
+fr.onload = function(e) {     
+    console.log(e.target.result); 
+}; 
+fr.readAsText("./Nuevo documento de texto.txt");
+
+      
 class WBCanvas extends React.Component {
     
     constructor(props) {
@@ -332,7 +339,6 @@ class WSBBChannel {
     }
     onOpen(evt) {
         console.log("In onOpen", evt);
-        this.wsocket.client.max.idle.timeout(200000);
     }
     onMessage(evt) {
         console.log("In onMessage", evt);
