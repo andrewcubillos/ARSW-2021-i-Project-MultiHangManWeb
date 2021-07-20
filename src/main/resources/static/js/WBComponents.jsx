@@ -233,15 +233,14 @@ class WBCanvas extends React.Component {
             this.myp5.line(x1, y1, x2, y2);
     }
     drawWord(p,x,y) {
-                let c=0;
+                
                 
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
-                let palabram=this.myp5.createElement('h2', '');
-                palabram.position(x, y);
+                ci.position(x, y);
                 
-                palabram.html(p); 
+                ci.html(p); 
     }
     
     componentDidMount() {
