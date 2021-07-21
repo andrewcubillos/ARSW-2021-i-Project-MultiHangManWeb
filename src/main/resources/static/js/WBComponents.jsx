@@ -300,6 +300,7 @@ function buscar(lt,num) {
     }
 Array.prototype.getDuplicates = function () {
     var duplicates = [];
+    
     for (var i = 0; i < this.length; i++) {
         if(duplicates.hasOwnProperty(this[i])) {
             duplicates[this[i]].push(i);
@@ -307,7 +308,7 @@ Array.prototype.getDuplicates = function () {
             duplicates[this[i]] = [i];
         }
     }
-
+    console.log(duplicates);
     return duplicates;
 };
 
