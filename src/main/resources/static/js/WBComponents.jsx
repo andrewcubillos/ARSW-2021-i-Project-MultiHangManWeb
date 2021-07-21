@@ -311,7 +311,8 @@ Array.prototype.getDuplicates = function () {
             repeated.push(i);
         }
     }
-
+    console.log(repeated);
+    console.log(duplicates);
     return duplicates;
 };
 
