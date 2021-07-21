@@ -306,11 +306,12 @@ Array.prototype.getDuplicates = function () {
             duplicates[this[i]].push(i);
             repeated.push(i);
         } else if (this.lastIndexOf(this[i]) !== i) {
+            console.log(this[i]);
+            console.log([i]);
             duplicates[this[i]] = [i];
         }
     }
-    console.log(repeated);
-    console.log(duplicates);
+
     return duplicates;
 };
 
