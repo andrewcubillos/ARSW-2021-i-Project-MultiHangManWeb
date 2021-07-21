@@ -312,8 +312,8 @@ Array.prototype.getDuplicates = function () {
 };
 
 let po=Object.values(["abc","def","abc","abc"].getDuplicates());
-const pe= Array.from(po);
-console.log(pe[1]);
+let pe= Array.of(po);
+console.log(pe);
 function mostrar(letra,num){
     var pal;
     var pos;
