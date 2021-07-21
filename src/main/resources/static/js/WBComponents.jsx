@@ -310,7 +310,8 @@ Array.prototype.getDuplicates = function () {
         }
     }
     console.log(repeated);
-    return repeated;
+    console.log(duplicates);
+    return duplicates;
 };
 
 ["abc","def","abc","abc"].getDuplicates();
