@@ -309,7 +309,7 @@ Array.prototype.getDuplicates = function () {
         }
     }
    
-    console.log((duplicates["b"]));
+    console.log((duplicates["i"]));
     return duplicates;
 };
 
