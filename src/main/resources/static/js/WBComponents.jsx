@@ -280,6 +280,7 @@ const palabras=paisses();
    const mino = 0;
    const maxi = 350;
    let rand =  mino + (Math.random() * (maxi-mino));
+   console.log(rand);
 const word=Array.from(palabras[rand]);
 const word2=Array.from(palabras[1]);
 const word3=Array.from(palabras[4]);
