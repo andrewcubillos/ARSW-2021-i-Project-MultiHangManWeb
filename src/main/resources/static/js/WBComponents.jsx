@@ -299,7 +299,7 @@ function buscar(lt,num) {
     return bool;
     }
 Array.prototype.getDuplicates = function () {
-    var duplicates = {};
+    var duplicates = [];
     for (var i = 0; i < this.length; i++) {
         if(duplicates.hasOwnProperty(this[i])) {
             duplicates[this[i]].push(i);
@@ -311,8 +311,8 @@ Array.prototype.getDuplicates = function () {
     return duplicates;
 };
 const pe=[1,2,3];
-let po=Object.values(["abc","def","abc","abc"].getDuplicates())[0];
-pe.push(po);
+let po=Object.values(["abc","def","abc","abc"].getDuplicates());
+pe.push(po[0]);
 console.log(pe);
 function mostrar(letra,num){
     var pal;
