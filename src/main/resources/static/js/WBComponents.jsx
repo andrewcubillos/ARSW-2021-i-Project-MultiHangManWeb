@@ -321,8 +321,13 @@ function mostrar(letra,num){
     
     if(num===1){
         let duplicate=word.getDuplicates()[letra];
-        if(duplicate.length>0) duplicate.forEach(element => palabra1[element]=letra);
-       
+        if(typeof duplicate !== 'undefined'){
+            if(duplicate.length>0) duplicate.forEach(element => palabra1[element]=letra);
+        }
+        else{
+            pos=word.indexOf(letra);
+            palabra1[pos]=letra;
+        }
         pal=palabra1;
     }
     if(num===2){
