@@ -310,7 +310,8 @@ Array.prototype.getDuplicates = function () {
 
     return duplicates;
 };
-console.log(Object.values(["abc","def","abc","abc"].getDuplicates())[0]);
+let po=Object.values(["abc","def","abc","abc"].getDuplicates())[0];
+console.log(po);
 function mostrar(letra,num){
     var pal;
     var pos;
