@@ -308,8 +308,7 @@ Array.prototype.getDuplicates = function () {
             duplicates[this[i]] = [i];
         }
     }
-    console.log(duplicates);
-    console.log(Object.values(duplicates));
+   
     console.log((duplicates["b"]));
     return duplicates;
 };
