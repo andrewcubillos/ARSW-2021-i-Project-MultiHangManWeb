@@ -299,21 +299,22 @@ function buscar(lt,num) {
     return bool;
     }
 Array.prototype.getDuplicates = function () {
-    var duplicates = [];
-    
+    var duplicates = {};
+    var repeated=[];
     for (var i = 0; i < this.length; i++) {
         if(duplicates.hasOwnProperty(this[i])) {
             duplicates[this[i]].push(i);
+            repeated.push(i);
         } else if (this.lastIndexOf(this[i]) !== i) {
             duplicates[this[i]] = [i];
         }
     }
-    console.log(duplicates);
-    return duplicates;
+    console.log(repeated);
+    return repeated;
 };
-
-let po=Object.values(["abc","def","abc","abc"].getDuplicates());
-let pe= Array.of(po);
+const pe=[1,2,3];
+let po=Object.values(["abc","def","abc","abc"].getDuplicates())[0];
+pe.push(po);
 console.log(pe);
 function mostrar(letra,num){
     var pal;
