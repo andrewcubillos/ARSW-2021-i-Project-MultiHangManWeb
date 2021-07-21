@@ -309,7 +309,6 @@ Array.prototype.getDuplicates = function () {
         }
     }
    
-    console.log((duplicates["i"]));
     return duplicates;
 };
 
@@ -320,12 +319,12 @@ function mostrar(letra,num){
     var pos;
     
     if(num===1){
-        let duplicate=word.getDuplicates()[letra];
-        if(typeof duplicate !== 'undefined'){
+        try{
+            let duplicate=word.getDuplicates()[letra];
+       
             console.log(typeof duplicate);
             if(duplicate.length>0) duplicate.forEach(element => palabra1[element]=letra);
-        }
-        else{
+        }catch(e){
             pos=word.indexOf(letra);
             palabra1[pos]=letra;
         }
