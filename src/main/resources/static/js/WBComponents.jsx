@@ -15,6 +15,9 @@ class Editor extends React.Component {
     }
 }
 let palabraw1,palabraw2,palabraw3;
+let input1;
+let input2;
+let input3;
 
 class WBCanvas extends React.Component {
     
@@ -49,9 +52,6 @@ class WBCanvas extends React.Component {
             let button1;
             let button2;
             let button3;
-            let input1;
-            let input2;
-            let input3;
             let yi=105;
             let y2=130;
             let y3=240;
@@ -241,7 +241,7 @@ class WBCanvas extends React.Component {
     }
     drawWord(p,x,y) {
                 
-                
+                input1.attribute('disabled', ''); 
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
