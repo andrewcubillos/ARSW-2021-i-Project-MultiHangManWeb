@@ -310,7 +310,7 @@ Array.prototype.getDuplicates = function () {
     }
     console.log(duplicates);
     console.log(Object.values(duplicates));
-    console.log((duplicates["a"]));
+    console.log((duplicates["b"]));
     return duplicates;
 };
 
