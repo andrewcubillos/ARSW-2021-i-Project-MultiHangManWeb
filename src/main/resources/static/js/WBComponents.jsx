@@ -279,7 +279,7 @@ class WBCanvas extends React.Component {
 const palabras=paisses();
    const mino = 0;
    const maxi = 350;
-   let rand =  mino + Math.Floor(Math.random() * (maxi-mino));
+   let rand =  mino + Math.floor(Math.random() * (maxi-mino));
    console.log(rand);
 const word=Array.from(palabras[0]);
 const word2=Array.from(palabras[1]);
