@@ -313,7 +313,7 @@ Array.prototype.getDuplicates = function () {
 
 let po=Object.values(["abc","def","abc","abc"].getDuplicates());
 const pe= Array.from(po);
-console.log(pe);
+console.log(pe[1]);
 function mostrar(letra,num){
     var pal;
     var pos;
