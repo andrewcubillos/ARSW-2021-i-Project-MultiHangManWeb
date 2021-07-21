@@ -322,6 +322,7 @@ function mostrar(letra,num){
     if(num===1){
         let duplicate=word.getDuplicates()[letra];
         if(typeof duplicate !== 'undefined'){
+            console.log(typeof duplicate);
             if(duplicate.length>0) duplicate.forEach(element => palabra1[element]=letra);
         }
         else{
