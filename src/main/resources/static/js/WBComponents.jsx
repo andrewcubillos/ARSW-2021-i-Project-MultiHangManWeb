@@ -15,9 +15,8 @@ class Editor extends React.Component {
     }
 }
 let palabraw1,palabraw2,palabraw3;
-let input1;
-let input2;
-let input3;
+let input1,input2,input3;
+let button1,button2, button3;
 
 class WBCanvas extends React.Component {
     
@@ -49,9 +48,7 @@ class WBCanvas extends React.Component {
             let color1 = 125;
             let color2 = 50;
             let color3 = 0;
-            let button1;
-            let button2;
-            let button3;
+            
             let yi=105;
             let y2=130;
             let y3=240;
@@ -277,11 +274,6 @@ class WBCanvas extends React.Component {
     }
 }
 const palabras=paisses();
-   const mino = 0;
-   const maxi = 350;
-   let rand1 =  mino + Math.floor(Math.random() * (maxi-mino));
-   let rand2 =  mino + Math.floor(Math.random() * (maxi-mino));
-   let rand3 =  mino + Math.floor(Math.random() * (maxi-mino));
    var pais1 = palabras[Math.floor(Math.random()*palabras.length)];
    var pais2 = palabras[Math.floor(Math.random()*palabras.length)];
    var pais3 = palabras[Math.floor(Math.random()*palabras.length)];
@@ -289,9 +281,11 @@ const palabras=paisses();
    console.log(pais2);
    console.log(pais3);
 const word=Array.from(pais1);
+ console.log(word);
 const word2=Array.from(pais2);
 const word3=Array.from(pais3);
 const palabra1= new Array(word.length);
+ console.log(palabra1);
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
 palabra1.fill("-");
