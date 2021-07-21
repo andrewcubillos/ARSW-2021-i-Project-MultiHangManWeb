@@ -314,7 +314,7 @@ Array.prototype.getDuplicates = function () {
     console.log(duplicates);
     console.log(repeated);
     console.log(Object.values(duplicates));
-    console.log(duplicates['a']);
+    console.log(duplicates['a'][0]);
     return repeated;
 };
 
