@@ -281,11 +281,11 @@ const palabras=paisses();
    console.log(pais2);
    console.log(pais3);
 const word=Array.from(pais1);
- console.log(word);
+ 
 const word2=Array.from(pais2);
 const word3=Array.from(pais3);
 const palabra1= new Array(word.length);
- console.log(palabra1);
+
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
 palabra1.fill("-");
@@ -310,7 +310,7 @@ Array.prototype.getDuplicates = function () {
 
     return duplicates;
 };
-console.log(["abc","def","abc"].getDuplicates());
+console.log(["abc","def","abc","abc"].getDuplicates());
 function mostrar(letra,num){
     var pal;
     var pos;
