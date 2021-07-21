@@ -300,22 +300,18 @@ function buscar(lt,num) {
     }
 Array.prototype.getDuplicates = function () {
     var duplicates = {};
-    var repeated=[];
     for (var i = 0; i < this.length; i++) {
         if(duplicates.hasOwnProperty(this[i])) {
             duplicates[this[i]].push(i);
-            repeated.push(i);
         } else if (this.lastIndexOf(this[i]) !== i) {
             
             duplicates[this[i]] = [i];
-            repeated.push(i);
         }
     }
     console.log(duplicates);
-    console.log(repeated);
     console.log(Object.values(duplicates));
     console.log((duplicates["a"]));
-    return repeated;
+    return duplicates;
 };
 
 ["a","r","g","e","n","t","i","n","a"].getDuplicates();
@@ -325,8 +321,10 @@ function mostrar(letra,num){
     var pos;
     
     if(num===1){
-        pos=word.indexOf(letra);
-        palabra1[pos]=letra;
+        let duplicate=word.getDuplicates()[letra];
+            
+        duplicate.forEach(element => palabra1[element]=letra);
+       
         pal=palabra1;
     }
     if(num===2){
