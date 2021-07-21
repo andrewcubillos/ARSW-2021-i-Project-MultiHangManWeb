@@ -1,5 +1,5 @@
-
-export const paisses = ()=>{
+class WBCanvas extends React.Component {
+paisses(){
     const countryList = [
 	"Afghanistan",
 	"Albania",
@@ -252,4 +252,5 @@ export const paisses = ()=>{
 	"Åland Islands"
 ];
     return countryList;
-};
+}
+}

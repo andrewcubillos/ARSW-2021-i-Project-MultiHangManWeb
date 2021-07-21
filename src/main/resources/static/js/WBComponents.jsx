@@ -1,4 +1,3 @@
-import {paisses} from './palabras'
 class Editor extends React.Component {
     render() {
         return (
@@ -16,7 +15,8 @@ class Editor extends React.Component {
     }
 }
 let palabraw1,palabraw2,palabraw3;
-paisses();
+let pais= new listado();
+pais.paisses();
 class WBCanvas extends React.Component {
     
     constructor(props) {
