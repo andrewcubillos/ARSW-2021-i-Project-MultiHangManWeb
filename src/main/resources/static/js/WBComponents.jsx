@@ -302,7 +302,7 @@ Array.prototype.getDuplicates = function () {
     var duplicates = {};
     var repeated=[];
     for (var i = 0; i < this.length; i++) {
-        if(repeated.hasOwnProperty(this[i])) {
+        if(duplicates.hasOwnProperty(this[i])) {
             duplicates[this[i]].push(i);
             repeated.push(i);
         } else if (this.lastIndexOf(this[i]) !== i) {
@@ -311,8 +311,8 @@ Array.prototype.getDuplicates = function () {
             repeated.push(i);
         }
     }
-    console.log(repeated);
-    console.log(duplicates);
+            console.log(repeated);
+            console.log(duplicates);
     return duplicates;
 };
 
