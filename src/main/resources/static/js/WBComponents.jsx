@@ -322,8 +322,7 @@ function mostrar(letra,num){
     
     if(num===1){
         let duplicate=word.getDuplicates()[letra];
-            
-        duplicate.forEach(element => palabra1[element]=letra);
+        if(duplicate.length()>0) duplicate.forEach(element => palabra1[element]=letra);
        
         pal=palabra1;
     }
