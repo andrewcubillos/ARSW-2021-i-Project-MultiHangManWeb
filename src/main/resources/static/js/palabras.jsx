@@ -1,5 +1,5 @@
 
-function paisses(){
+export const paisses = ()=>{
     const countryList = [
 	"Afghanistan",
 	"Albania",
@@ -252,4 +252,4 @@ function paisses(){
 	"Åland Islands"
 ];
     return countryList;
-}
+};

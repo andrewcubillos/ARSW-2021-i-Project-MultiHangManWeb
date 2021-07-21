@@ -1,3 +1,4 @@
+import {paisses} from './palabras'
 class Editor extends React.Component {
     render() {
         return (
