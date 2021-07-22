@@ -188,7 +188,8 @@ class WBCanvas extends React.Component {
                 
             }
             function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W,wx){
-               
+               let posicion1;
+               let posicion2;
                 if(buscar(L,N)===false){
                     if(W==="wrong1"){
                         W=wrong1;
@@ -212,11 +213,24 @@ class WBCanvas extends React.Component {
                         
                         p.noStroke();
                         p.fill(0);
-                        p.text('you louse!', 550-200, 200);
-                        p.text('you louse!', 850-200, 200);
+                        if(X1===250){
+                            posicion1=550;
+                            posicion2=850;
+                        }
+                        else if(X1===550){
+                            posicion1=250;
+                            posicion2=850;
+                        }
+                        else if(X1===850){
+                            posicion1=250;
+                            posicion2=550;
+                            
+                        }
+                        p.text('you louse!', posicion1-200, 200);
+                        p.text('you louse!', posicion2-200, 200);
                         wsreference.sendecommand("delete");
-                        wsreference.sendetext('you lose!', 550-200, 200);
-                        wsreference.sendetext('you lose!', 850-200, 200);
+                        wsreference.sendetext('you lose!', posicion1-200, 200);
+                        wsreference.sendetext('you lose!', posicion2-200, 200);
                         p.removeElements();
                     }
                     
