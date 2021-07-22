@@ -288,6 +288,8 @@ const word=Array.from(pais1);
 const word2=Array.from(pais2);
 const word3=Array.from(pais3);
 const palabra1= new Array(word.length);
+console.log("word   "+word);
+console.log("palabra  "+palabra);
 
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
