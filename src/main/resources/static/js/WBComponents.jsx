@@ -256,7 +256,7 @@ class WBCanvas extends React.Component {
                     palabraw3.position(x, y);
                    palabraw3.html(p);   
                 }
-                
+                this.myp5.removeElements();
     }
     
     componentDidMount() {
@@ -292,7 +292,6 @@ palabrass.push(new Array(words[2].length));
 palabrass[0].fill("-");
 palabrass[1].fill("-");
 palabrass[2].fill("-");
-console.log(words);
 
 Array.prototype.getDuplicates = function () {
     var duplicates = {};
@@ -309,12 +308,9 @@ Array.prototype.getDuplicates = function () {
     
     
 };
-console.log(["a","b","a"].getDuplicates()["a"]);
 function buscar(lt,num) {
-    console.log(words[num]);
     var bool=true;
     bool=words[num].includes(lt);
-    console.log("bool"+bool);
     return bool;
     }
 
@@ -325,13 +321,11 @@ function mostrar(letra,num){
         
         let pos;
         try{
-            console.log("try");
             let duplicate=words[num].getDuplicates()[letra];
             console.log(duplicate);
             if(duplicate.length>0) duplicate.forEach(element => palabrass[num][element]=letra);
             console.log(palabrass);
         }catch(e){
-            console.log("catch");
             pos=words[num].indexOf(letra);
             
             palabrass[num][pos]=letra;
