@@ -286,8 +286,8 @@ words.push(Array.from(pais3));
  
 
 let palabra1=new Array(words[0].length);
-let palabra1=new Array(words[1].length);
-let palabra1=new Array(words[2].length);
+let palabra2=new Array(words[1].length);
+let palabra3=new Array(words[2].length);
 
 
 palabra1.fill("-");
