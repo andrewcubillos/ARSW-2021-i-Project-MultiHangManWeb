@@ -227,21 +227,7 @@ class WBCanvas extends React.Component {
                 
         };
     }
-    inhabilitar(x){
-        if (x===40 || x===250){
-            console.log("entró");
-            input1.attribute('disabled', '');
-            button1.attribute('disabled', '');    
-        }
-        else if(x===340 || x===550){
-            input2.attribute('disabled', '');
-            button2.attribute('disabled', '');
-        }
-        else if(x===640 || x===850){
-            input3.attribute('disabled', '');
-            button3.attribute('disabled', '');
-        }
-    }
+    
     drawEllipse(x,y,color1,color2,color3) {
         
             inhabilitar(x);
@@ -292,6 +278,21 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
+function inhabilitar(x){
+        if (x===40 || x===250){
+            console.log("entró");
+            input1.attribute('disabled', '');
+            button1.attribute('disabled', '');    
+        }
+        else if(x===340 || x===550){
+            input2.attribute('disabled', '');
+            button2.attribute('disabled', '');
+        }
+        else if(x===640 || x===850){
+            input3.attribute('disabled', '');
+            button3.attribute('disabled', '');
+        }
+    }
 const paises=paisses();
 const words= new Array();
 const palabrass= new Array();
