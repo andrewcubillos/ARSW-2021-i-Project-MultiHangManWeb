@@ -208,6 +208,7 @@ class WBCanvas extends React.Component {
                         p.stroke(50,205,50);
                         p.fill(0);
                         p.text('you won!', X1-200, 200);
+                        wsreference.sendecommand("delete");
                         p.removeElements();
                     }
                     
@@ -257,12 +258,16 @@ class WBCanvas extends React.Component {
             this.myp5.fill(0);
             this.myp5.text(p, x, y);
     }
+    doCommand(cmd){
+        if (cmd==="delete"){
+            this.myp5.removeElements();
+        }
+    }
     drawWord(p,x,y) {
                 
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
-                
                 
                 if (x===40){
                     inhabilitar(x);
@@ -426,6 +431,13 @@ class WSBBChannel {
         console.log("sending: ",  msg);
         this.wsocket.send( msg);
     }
+    sendecommand(cmd) {
+	let msg = '{ "cmd": ' + JSON.stringify(cmd) + "}";
+       
+        console.log("sending: ",  msg);
+        this.wsocket.send( msg);
+    }
+    
 }
 ReactDOM.render(
         <Editor name="Andres"/>,
