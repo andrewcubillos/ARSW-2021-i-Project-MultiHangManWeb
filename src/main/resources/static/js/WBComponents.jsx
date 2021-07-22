@@ -313,9 +313,10 @@ Array.prototype.getDuplicates = function () {
     }
    
     return duplicates;
-    console.log("aaay"+ ["a,b,a"].getDuplicates()["a"]);
+    
     
 };
+console.log("aaay"+ ["a,b,a"].getDuplicates()["a"]);
 function buscar(lt,num) {
     console.log(words[num]);
     var bool=true;
