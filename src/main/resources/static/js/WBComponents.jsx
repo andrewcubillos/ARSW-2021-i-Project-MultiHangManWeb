@@ -173,7 +173,7 @@ class WBCanvas extends React.Component {
                     p.textSize(47);
                     p.noStroke();
                     p.fill(0);
-                    p.text('you lose', 350, 100);
+                    p.text('you lose!', 350, 100);
                     //p.line(x1, yi-10, x1+20, y2-30);   
                     //wsreference.sendeline(x1, yi-10, x1+20, y2-30,c1,c2,c3);
                     //p.line(x1+20, yi-10, x1, y2-30);   
@@ -273,31 +273,28 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
-const palabras=paisses();
-   var pais1 = palabras[Math.floor(Math.random()*palabras.length)];
-   var pais2 = palabras[Math.floor(Math.random()*palabras.length)];
-   var pais3 = palabras[Math.floor(Math.random()*palabras.length)];
-   console.log(pais1);
-   console.log(pais2);
-   console.log(pais3);
-const word=Array.from(pais1);
+let paises=paisses();
+let words=[];
+let palabras=[];
+var pais1 = paises[Math.floor(Math.random()*paises.length)];
+var pais2 = paises[Math.floor(Math.random()*paises.length)];
+var pais3 = paises[Math.floor(Math.random()*paises.length)];
+console.log(pais1);
+console.log(pais2);
+console.log(pais3);
+words.push(Array.from(pais1)); 
+words.push(Array.from(pais2)); 
+words.push(Array.from(pais3)); 
  
-const word2=Array.from(pais2);
-const word3=Array.from(pais3);
-const palabra1= new Array(word.length);
 
-const palabra2= new Array(word2.length);
-const palabra3= new Array(word3.length);
-palabra1.fill("-");
-palabra2.fill("-");
-palabra3.fill("-");
-function buscar(lt,num) {
-    var bool;
-    if(num===1)bool=word.includes(lt);
-    if(num===2)bool=word2.includes(lt);
-    if(num===3)bool=word3.includes(lt);
-    return bool;
-    }
+palabras.push(new Array(words[0].length));
+palabras.push(new Array(words[1].length));
+palabras.push(new Array(words[2].length));
+
+palabras[0].fill("-");
+palabras[1].fill("-");
+palabras[2].fill("-");
+
 Array.prototype.getDuplicates = function () {
     var duplicates = {};
     for (var i = 0; i < this.length; i++) {
@@ -311,37 +308,28 @@ Array.prototype.getDuplicates = function () {
    
     return duplicates;
 };
+function buscar(lt,num) {
+    var bool;
+    bool=words[num].includes(lt);
+    return bool;
+    }
 
-["a","r","g","e","n","t","i","n","a"].getDuplicates();
+
 
 function mostrar(letra,num){
-    var pal;
-    var pos;
-    
-    if(num===1){
         try{
-            let duplicate=word.getDuplicates()[letra];
+            let duplicate=words[num].getDuplicates()[letra];
        
             console.log(typeof duplicate);
-            if(duplicate.length>0) duplicate.forEach(element => palabra1[element]=letra);
+            if(duplicate.length>0) duplicate.forEach(element => palabras[num][element]=letra);
         }catch(e){
-            pos=word.indexOf(letra);
-            palabra1[pos]=letra;
+            pos=words[num].indexOf(letra);
+            palabras[num][pos]=letra;
         }
-        pal=palabra1;
+        return palabras[num];
     }
-    if(num===2){
-        pos=word2.indexOf(letra);
-        palabra2[pos]=letra;
-        pal=palabra2;
-    }
-    if(num===3){
-        pos=word3.indexOf(letra);
-        palabra3[pos]=letra;
-        pal=palabra3;
-    }
-    return pal.join('');
-}
+    
+
 
 // Retorna la url del servicio. Es una función de configuración.
 function BBServiceURL() {
