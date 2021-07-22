@@ -317,6 +317,10 @@ function buscar(lt,num) {
 
 
 function mostrar(letra,num){
+        console.log(words[num]);
+        console.log(palabras[num]);
+        
+        
         let pos;
         try{
             let duplicate=words[num].getDuplicates()[letra];
@@ -327,6 +331,7 @@ function mostrar(letra,num){
             pos=words[num].indexOf(letra);
             palabras[num][pos]=letra;
         }
+        console.log(palabras[num]);
         return palabras[num];
     }
     
