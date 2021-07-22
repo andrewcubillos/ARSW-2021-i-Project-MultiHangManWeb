@@ -185,7 +185,7 @@ class WBCanvas extends React.Component {
             }
             function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W,wx){
                
-                if(buscar(L,N)===false){
+                if(buscar(L,N-1)===false){
                     if(W==="wrong1"){
                         W=wrong1;
                         wrong1++;}
