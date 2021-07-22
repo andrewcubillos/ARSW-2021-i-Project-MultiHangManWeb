@@ -279,9 +279,7 @@ let palabras=[];
 var pais1 = paises[Math.floor(Math.random()*paises.length)];
 var pais2 = paises[Math.floor(Math.random()*paises.length)];
 var pais3 = paises[Math.floor(Math.random()*paises.length)];
-console.log(pais1);
-console.log(pais2);
-console.log(pais3);
+
 words.push(Array.from(pais1)); 
 words.push(Array.from(pais2)); 
 words.push(Array.from(pais3)); 
