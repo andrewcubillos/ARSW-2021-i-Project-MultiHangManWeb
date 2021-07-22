@@ -275,6 +275,7 @@ class WBCanvas extends React.Component {
 }
 const palabras=paisses();
 const words= new Array();
+const palabras= new Array();
 console.log(words);
    var pais1 = palabras[Math.floor(Math.random()*palabras.length)];
    var pais2 = palabras[Math.floor(Math.random()*palabras.length)];
@@ -293,6 +294,14 @@ const palabra3= new Array(word3.length);
 palabra1.fill("-");
 palabra2.fill("-");
 palabra3.fill("-");
+words.push(word);
+words.push(word2);
+words.push(word3);
+palabras.push(palabra1);
+palabras.push(palabra2);
+palabras.push(palabra3);
+console.log(words);
+console.log(palabras);
 
 Array.prototype.getDuplicates = function () {
     var duplicates = {};
