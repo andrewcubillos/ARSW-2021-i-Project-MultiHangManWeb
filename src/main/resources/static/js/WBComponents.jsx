@@ -175,7 +175,7 @@ class WBCanvas extends React.Component {
                     p.noStroke();
                     p.fill(0);
                     p.text('you lose!', x1-200, 200);
-                    wsreference.sendeword('you lose!', x1-200, 200);
+                    wsreference.sendetext('you lose!', x1-200, 200);
                     inhabilitar(x1);
                     //p.line(x1, yi-10, x1+20, y2-30);   
                     //wsreference.sendeline(x1, yi-10, x1+20, y2-30,c1,c2,c3);
@@ -204,10 +204,10 @@ class WBCanvas extends React.Component {
                 else{
                     var word=mostrar(L,N);
                     if (!word.includes("-")){
-                        p.text('you won!', x1-200, 200);
+                        p.text('you won!', X1-200, 200);
                     }
                     P.html(word); 
-                    wsreference.sendetext(word,wx,490);
+                    wsreference.sendeword(word,wx,490);
                     
                 }
                    
