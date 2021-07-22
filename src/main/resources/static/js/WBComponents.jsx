@@ -317,6 +317,7 @@ function buscar(lt,num) {
 
 
 function mostrar(letra,num){
+        let pos;
         try{
             let duplicate=words[num].getDuplicates()[letra];
        
