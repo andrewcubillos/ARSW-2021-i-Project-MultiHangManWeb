@@ -333,10 +333,12 @@ function mostrar(letra,num){
         
         let pos;
         try{
+            console.log("try");
             let duplicate=words[num].getDuplicates()[letra];
        
             if(duplicate.length>0) duplicate.forEach(element => palabras[num][element]=letra);
         }catch(e){
+            console.log("catch");
             pos=words[num].indexOf(letra);
             palabras[num][pos]=letra;
         }
