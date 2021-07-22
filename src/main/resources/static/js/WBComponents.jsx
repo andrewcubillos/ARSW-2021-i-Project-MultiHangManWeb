@@ -175,7 +175,7 @@ class WBCanvas extends React.Component {
                     p.noStroke();
                     p.fill(0);
                     p.text('you lose!', x1-200, 200);
-                    wsereference.sendeword('you lose!', x1-200, 200);
+                    wsreference.sendeword('you lose!', x1-200, 200);
                     inhabilitar(x1);
                     //p.line(x1, yi-10, x1+20, y2-30);   
                     //wsreference.sendeline(x1, yi-10, x1+20, y2-30,c1,c2,c3);
