@@ -289,13 +289,10 @@ const word2=Array.from(pais2);
 const word3=Array.from(pais3);
 let palabra1= new Array(word.length);
 var options = {
-  valueNames: [ 'name', 'born' ]
+  valueNames: [ "name", "born" ]
 };
 
-var userList = new List('users', options);
-
-console.log("options  "+options);
-console.log("userlist  "+userList);
+console.log("options  "+options.valueNames);
 
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
