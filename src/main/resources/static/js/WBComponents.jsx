@@ -273,23 +273,23 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
-let paises=paisses();
-let words=[];
-let palabras=[];
+const paises=paisses();
+const words= new Array(3);
+const palabras=new Array(3);
 var pais1 = paises[Math.floor(Math.random()*paises.length)];
 var pais2 = paises[Math.floor(Math.random()*paises.length)];
 var pais3 = paises[Math.floor(Math.random()*paises.length)];
-let word1=Array.from(pais1);
-let word2=Array.from(pais2);
-let word3=Array.from(pais3);
+const word1=Array.from(pais1);
+const word2=Array.from(pais2);
+const word3=Array.from(pais3);
 words.push(word1); 
 words.push(word2); 
 words.push(word3); 
  
 console.log("words " + words);
-let palabra1=new Array(word1.length);
-let palabra2=new Array(word2.length);
-let palabra3=new Array(word3.length);
+const palabra1=new Array(word1.length);
+const palabra2=new Array(word2.length);
+const palabra3=new Array(word3.length);
 console.log("palabra1antes" +palabra1);
 
 palabra1.fill("-");
