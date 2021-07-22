@@ -275,6 +275,7 @@ class WBCanvas extends React.Component {
 }
 const palabras=paisses();
 const words= new Array();
+console.log(words);
    var pais1 = palabras[Math.floor(Math.random()*palabras.length)];
    var pais2 = palabras[Math.floor(Math.random()*palabras.length)];
    var pais3 = palabras[Math.floor(Math.random()*palabras.length)];
