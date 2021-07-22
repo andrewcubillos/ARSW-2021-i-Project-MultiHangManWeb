@@ -286,9 +286,9 @@ words.push(Array.from(pais1));
 words.push(Array.from(pais2));
 words.push(Array.from(pais3));
  
-palabrass.push(new Array(word.length));
-palabrass.push(new Array(word2.length));
-palabrass.push(new Array(word3.length));
+palabrass.push(new Array(words[0].length));
+palabrass.push(new Array(words[1].length));
+palabrass.push(new Array(words[2].length));
 palabrass[0].fill("-");
 palabrass[1].fill("-");
 palabrass[2].fill("-");
