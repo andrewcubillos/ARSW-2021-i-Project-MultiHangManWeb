@@ -257,8 +257,6 @@ class WBCanvas extends React.Component {
                 
                 
                 if (x===40){
-                    input1.attribute('disabled', '');
-                    button1.attribute('disabled', '');
                     palabraw1.position(x, y);
                    palabraw1.html(p);  
                 }
