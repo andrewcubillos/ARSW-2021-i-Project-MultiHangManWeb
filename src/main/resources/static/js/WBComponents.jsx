@@ -204,7 +204,7 @@ class WBCanvas extends React.Component {
                 else{
                     var word=mostrar(L,N);
                     if (!word.includes("-")){
-                        p.Stroke();
+                        p.stroke(50,205,50);
                         p.fill(0);
                         p.text('you won!', X1-200, 200);
                     }
@@ -251,7 +251,7 @@ class WBCanvas extends React.Component {
     }
     drawText(p,x,y){
             this.myp5.textSize(40);
-            this.myp5.stroke(50,205,50);
+            this.myp5.noStroke();
             this.myp5.fill(0);
             this.myp5.text(p, x, y);
     }
