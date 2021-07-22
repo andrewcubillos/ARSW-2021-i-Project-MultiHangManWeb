@@ -285,13 +285,17 @@ words.push(Array.from(pais2));
 words.push(Array.from(pais3)); 
  
 
-palabras.push(new Array(words[0].length));
-palabras.push(new Array(words[1].length));
-palabras.push(new Array(words[2].length));
+let palabra1=new Array(words[0].length);
+let palabra1=new Array(words[1].length);
+let palabra1=new Array(words[2].length);
 
-palabras[0].fill("-");
-palabras[1].fill("-");
-palabras[2].fill("-");
+
+palabra1.fill("-");
+palabra2.fill("-");
+palabra3.fill("-");
+palabras.push(palabra1);
+palabras.push(palabra2);
+palabras.push(palabra3);
 
 Array.prototype.getDuplicates = function () {
     var duplicates = {};
