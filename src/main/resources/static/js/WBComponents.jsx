@@ -273,33 +273,25 @@ class WBCanvas extends React.Component {
                 </div>);
     }
 }
-const palabras=paisses();
+const paises=paisses();
 const words= new Array();
 const palabrass= new Array();
-
-   var pais1 = palabras[Math.floor(Math.random()*palabras.length)];
-   var pais2 = palabras[Math.floor(Math.random()*palabras.length)];
-   var pais3 = palabras[Math.floor(Math.random()*palabras.length)];
+var pais1 = paises[Math.floor(Math.random()*paises.length)];
+var pais2 = paises[Math.floor(Math.random()*paises.length)];
+var pais3 = paises[Math.floor(Math.random()*paises.length)];
    console.log(pais1);
    console.log(pais2);
    console.log(pais3);
-let word=Array.from(pais1);
+words.push(Array.from(pais1));
+words.push(Array.from(pais2));
+words.push(Array.from(pais3));
  
-const word2=Array.from(pais2);
-const word3=Array.from(pais3);
-let palabra1= new Array(word.length);
-
-const palabra2= new Array(word2.length);
-const palabra3= new Array(word3.length);
-palabra1.fill("-");
-palabra2.fill("-");
-palabra3.fill("-");
-words.push(word);
-words.push(word2);
-words.push(word3);
-palabrass.push(palabra1);
-palabrass.push(palabra2);
-palabrass.push(palabra3);
+palabrass.push(new Array(word.length));
+palabrass.push(new Array(word2.length));
+palabrass.push(new Array(word3.length));
+palabrass[0].fill("-");
+palabrass[1].fill("-");
+palabrass[2].fill("-");
 console.log(words);
 
 Array.prototype.getDuplicates = function () {
