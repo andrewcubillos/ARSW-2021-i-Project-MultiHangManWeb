@@ -229,6 +229,7 @@ class WBCanvas extends React.Component {
     }
     inhabilitar(x){
         if (x===40 || x===250){
+            console.log("entró");
             input1.attribute('disabled', '');
             button1.attribute('disabled', '');    
         }
