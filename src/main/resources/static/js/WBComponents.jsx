@@ -210,7 +210,7 @@ class WBCanvas extends React.Component {
                         p.stroke(50,205,50);
                         p.fill(0);
                         p.text('you won!', X1-200, 200);
-                        
+                        wsreference.sendetext('you won!', X1-200, 200);
                         p.noStroke();
                         p.fill(0);
                         if(X1===250){
