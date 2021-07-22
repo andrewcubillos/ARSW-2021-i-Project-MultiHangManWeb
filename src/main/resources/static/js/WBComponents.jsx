@@ -208,6 +208,7 @@ class WBCanvas extends React.Component {
                         p.stroke(50,205,50);
                         p.fill(0);
                         p.text('you won!', X1-200, 200);
+                        inhabilitar(X1);
                     }
                     
                     P.html(word); 
