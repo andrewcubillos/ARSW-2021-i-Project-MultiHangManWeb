@@ -174,6 +174,15 @@ class WBCanvas extends React.Component {
                     p.noStroke();
                     p.fill(0);
                     p.text('you lose!', 350, 100);
+                    if(x1===250){
+                        
+                    }
+                    else if (x1===550){
+                        
+                    }
+                    else if(x1===850){
+                        
+                    }
                     //p.line(x1, yi-10, x1+20, y2-30);   
                     //wsreference.sendeline(x1, yi-10, x1+20, y2-30,c1,c2,c3);
                     //p.line(x1+20, yi-10, x1, y2-30);   
@@ -238,25 +247,30 @@ class WBCanvas extends React.Component {
     }
     drawWord(p,x,y) {
                 
-                input1.attribute('disabled', ''); 
+                 
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
                 
                 
                 if (x===40){
+                    input1.attribute('disabled', '');
+                    button1.attribute('disabled', '');
                     palabraw1.position(x, y);
                    palabraw1.html(p);  
                 }
                 else if(x===340){
+                    input2.attribute('disabled', '');
+                    button2.attribute('disabled', '');
                    palabraw2.position(x, y);
                    palabraw2.html(p);   
                 }
                 else if(x===640){
+                    input3.attribute('disabled', '');
+                    button3.attribute('disabled', '');
                     palabraw3.position(x, y);
                    palabraw3.html(p);   
                 }
-                this.myp5.removeElements();
     }
     
     componentDidMount() {
