@@ -31,6 +31,7 @@ class WBCanvas extends React.Component {
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
                         this.drawWord(obj.mst,obj.xx,obj.yy);
+                        this.drawText(obj.mst,obj.xx,obj.yy);
                         
                 });
         
@@ -170,10 +171,11 @@ class WBCanvas extends React.Component {
                    
                      p.line(x1, y3, x5, y5);   
                     wsreference.sendeline(x1,y3,x5,y5,c1,c2,c3);
-                    p.textSize(47);
+                    p.textSize(40);
                     p.noStroke();
                     p.fill(0);
-                    p.text('you lose!', x1-200, 100);
+                    p.text('you lose!', x1-200, 200);
+                    wsereference.sendeword('you lose!', x1-200, 200);
                     inhabilitar(x1);
                     //p.line(x1, yi-10, x1+20, y2-30);   
                     //wsreference.sendeline(x1, yi-10, x1+20, y2-30,c1,c2,c3);
@@ -239,6 +241,12 @@ class WBCanvas extends React.Component {
             inhabilitar(x1);
             this.myp5.stroke(color1,color2,color3);
             this.myp5.line(x1, y1, x2, y2);
+    }
+    drawText(p,x,y){
+            this.myp5.textSize(40);
+            this.myp5.noStroke();
+            this.myp5.fill(0);
+            this.myp5.text(p, x, y);
     }
     drawWord(p,x,y) {
                 
