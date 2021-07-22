@@ -207,7 +207,7 @@ class WBCanvas extends React.Component {
                         p.text('you won!', x1-200, 200);
                     }
                     P.html(word); 
-                    wsreference.sendeword(word,wx,490);
+                    wsreference.sendetext(word,wx,490);
                     
                 }
                    
@@ -410,6 +410,12 @@ class WSBBChannel {
     }
     sendeword(mst,xx,yy) {
 	let msg = '{ "mst": ' + JSON.stringify(mst) + ', "xx": ' + (xx)  +', "yy": ' + (yy)+  "}";
+       
+        console.log("sending: ",  msg);
+        this.wsocket.send( msg);
+    }
+    sendetext(txt,x,y) {
+	let msg = '{ "txt": ' + JSON.stringify(txt) + ', "x": ' + (x)  +', "y": ' + (y)+  "}";
        
         console.log("sending: ",  msg);
         this.wsocket.send( msg);
