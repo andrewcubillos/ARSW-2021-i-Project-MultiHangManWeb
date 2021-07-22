@@ -287,9 +287,9 @@ words.push(word2);
 words.push(word3); 
  
 console.log("words " + words);
-let palabra1=new Array(words[0].length);
-let palabra2=new Array(words[1].length);
-let palabra3=new Array(words[2].length);
+let palabra1=new Array(word1.length);
+let palabra2=new Array(word2.length);
+let palabra3=new Array(word3.length);
 console.log("palabra1antes" +palabra1);
 
 palabra1.fill("-");
