@@ -284,11 +284,11 @@ words.push(Array.from(pais1));
 words.push(Array.from(pais2)); 
 words.push(Array.from(pais3)); 
  
-
+console.log(words);
 let palabra1=new Array(words[0].length);
 let palabra2=new Array(words[1].length);
 let palabra3=new Array(words[2].length);
-
+console.log(palabra1);
 
 palabra1.fill("-");
 palabra2.fill("-");
