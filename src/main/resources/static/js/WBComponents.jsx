@@ -335,14 +335,16 @@ function mostrar(letra,num){
         try{
             console.log("try");
             let duplicate=words[num].getDuplicates()[letra];
-       
-            if(duplicate.length>0) duplicate.forEach(element => palabras[num][element]=letra);
+            console.log(duplicate);
+            if(duplicate.length>0) duplicate.forEach(element => palabrass[num][element]=letra);
+            console.log(palabrass);
         }catch(e){
             console.log("catch");
             pos=words[num].indexOf(letra);
-            palabras[num][pos]=letra;
+            
+            palabrass[num][pos]=letra;
         }
-        return palabras[num];
+        return palabrass[num];
     }
     
 
