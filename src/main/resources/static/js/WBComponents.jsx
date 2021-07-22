@@ -300,7 +300,8 @@ words.push(word3);
 palabrass.push(palabra1);
 palabrass.push(palabra2);
 palabrass.push(palabra3);
-console.log(words[0]);
+console.log(words);
+
 Array.prototype.getDuplicates = function () {
     var duplicates = {};
     for (var i = 0; i < this.length; i++) {
@@ -321,28 +322,24 @@ function buscar(lt,num) {
     console.log(words[num]);
     var bool=true;
     bool=words[num].includes(lt);
-    console.log(bool);
+    console.log("bool"+bool);
     return bool;
     }
 
 
 
 function mostrar(letra,num){
-        console.log(words[num]);
-        console.log(palabras[num]);
         
         
         let pos;
         try{
             let duplicate=words[num].getDuplicates()[letra];
        
-            console.log(typeof duplicate);
             if(duplicate.length>0) duplicate.forEach(element => palabras[num][element]=letra);
         }catch(e){
             pos=words[num].indexOf(letra);
             palabras[num][pos]=letra;
         }
-        console.log(palabras[num]);
         return palabras[num];
     }
     
