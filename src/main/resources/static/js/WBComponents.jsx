@@ -283,13 +283,19 @@ const palabrass= new Array();
    console.log(pais1);
    console.log(pais2);
    console.log(pais3);
-const word=Array.from(pais1);
+let word=Array.from(pais1);
  
 const word2=Array.from(pais2);
 const word3=Array.from(pais3);
-const palabra1= new Array(word.length);
-console.log("word   "+word);
-console.log("palabra  "+palabra1);
+let palabra1= new Array(word.length);
+var options = {
+  valueNames: [ 'name', 'born' ]
+};
+
+var userList = new List('users', options);
+
+console.log("options  "+options);
+console.log("userlist  "+userList);
 
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
