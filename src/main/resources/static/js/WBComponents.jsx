@@ -279,20 +279,23 @@ let palabras=[];
 var pais1 = paises[Math.floor(Math.random()*paises.length)];
 var pais2 = paises[Math.floor(Math.random()*paises.length)];
 var pais3 = paises[Math.floor(Math.random()*paises.length)];
-
-words.push(Array.from(pais1)); 
-words.push(Array.from(pais2)); 
-words.push(Array.from(pais3)); 
+let word1=Array.from(pais1);
+let word2=Array.from(pais2);
+let word3=Array.from(pais3);
+words.push(word1); 
+words.push(word2); 
+words.push(word3); 
  
-console.log(words);
+console.log("words " + words);
 let palabra1=new Array(words[0].length);
 let palabra2=new Array(words[1].length);
 let palabra3=new Array(words[2].length);
-console.log(palabra1);
+console.log("palabra1antes" +palabra1);
 
 palabra1.fill("-");
 palabra2.fill("-");
 palabra3.fill("-");
+console.log("palabras despues " +palabra1)
 palabras.push(palabra1);
 palabras.push(palabra2);
 palabras.push(palabra3);
