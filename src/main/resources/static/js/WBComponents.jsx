@@ -175,13 +175,16 @@ class WBCanvas extends React.Component {
                     p.fill(0);
                     p.text('you lose!', 350, 100);
                     if(x1===250){
-                        
+                       input1.attribute('disabled', '');
+                       button1.attribute('disabled', '');
                     }
                     else if (x1===550){
-                        
+                        input2.attribute('disabled', '');
+                        button2.attribute('disabled', '');
                     }
                     else if(x1===850){
-                        
+                        input3.attribute('disabled', '');
+                        button3.attribute('disabled', '');
                     }
                     //p.line(x1, yi-10, x1+20, y2-30);   
                     //wsreference.sendeline(x1, yi-10, x1+20, y2-30,c1,c2,c3);
