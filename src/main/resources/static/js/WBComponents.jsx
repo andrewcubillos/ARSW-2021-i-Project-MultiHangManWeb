@@ -204,6 +204,7 @@ class WBCanvas extends React.Component {
                 else{
                     var word=mostrar(L,N);
                     if (!word.includes("-")){
+                        p.textSize(40);
                         p.stroke(50,205,50);
                         p.fill(0);
                         p.text('you won!', X1-200, 200);
