@@ -307,7 +307,8 @@ Array.prototype.getDuplicates = function () {
     return duplicates;
 };
 function buscar(lt,num) {
-    var bool;
+    console.log(words[num]);
+    var bool=true;
     bool=words[num].includes(lt);
     return bool;
     }
