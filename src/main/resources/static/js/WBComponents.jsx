@@ -344,7 +344,7 @@ function mostrar(letra,num){
             
             palabrass[num][pos]=letra;
         }
-        return palabrass[num];
+        return palabrass[num].join('');
     }
     
 
