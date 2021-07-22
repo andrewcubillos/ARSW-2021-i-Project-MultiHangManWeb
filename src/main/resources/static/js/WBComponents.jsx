@@ -288,11 +288,6 @@ let word=Array.from(pais1);
 const word2=Array.from(pais2);
 const word3=Array.from(pais3);
 let palabra1= new Array(word.length);
-var options = {
-  valueNames: [ "name", "born" ]
-};
-
-console.log("options  "+options.valueNames);
 
 const palabra2= new Array(word2.length);
 const palabra3= new Array(word3.length);
@@ -318,6 +313,8 @@ Array.prototype.getDuplicates = function () {
     }
    
     return duplicates;
+    console.log("aaay"+ ["a,b,a"].getDuplicates()["a"]);
+    
 };
 function buscar(lt,num) {
     console.log(words[num]);
