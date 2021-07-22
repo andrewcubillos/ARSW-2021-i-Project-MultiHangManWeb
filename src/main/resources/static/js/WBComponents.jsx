@@ -31,7 +31,7 @@ class WBCanvas extends React.Component {
                         this.drawEllipse(obj.xi, obj.yi,obj.color1,obj.color2,obj.color3);
                         this.drawLine(obj.x1, obj.y1,obj.x2, obj.y2,obj.color1,obj.color2,obj.color3);
                         this.drawWord(obj.mst,obj.xx,obj.yy);
-                        this.drawText(obj.mst,obj.xx,obj.yy);
+                        this.drawText(obj.txt,obj.x,obj.y);
                         
                 });
         
