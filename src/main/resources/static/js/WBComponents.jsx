@@ -209,6 +209,11 @@ class WBCanvas extends React.Component {
                         p.stroke(50,205,50);
                         p.fill(0);
                         p.text('you won!', X1-200, 200);
+                        
+                        p.noStroke();
+                        p.fill(0);
+                        p.text('you louse!', 550-200, 200);
+                        p.text('you louse!', 850-200, 200);
                         wsreference.sendecommand("delete");
                         wsreference.sendetext('you lose!', 550-200, 200);
                         wsreference.sendetext('you lose!', 850-200, 200);
