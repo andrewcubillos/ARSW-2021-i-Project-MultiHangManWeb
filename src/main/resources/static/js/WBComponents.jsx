@@ -300,7 +300,7 @@ words.push(word3);
 palabrass.push(palabra1);
 palabrass.push(palabra2);
 palabrass.push(palabra3);
-console.log(words);
+console.log(words[0]);
 Array.prototype.getDuplicates = function () {
     var duplicates = {};
     for (var i = 0; i < this.length; i++) {
