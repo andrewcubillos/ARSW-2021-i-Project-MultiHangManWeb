@@ -185,7 +185,7 @@ class WBCanvas extends React.Component {
             }
             function palabra(L,P,N,X1,X2,X3,X4,X5,C1,C2,C3,W,wx){
                
-                if(buscar(L,N-1)===false){
+                if(buscar(L,N)===false){
                     if(W==="wrong1"){
                         W=wrong1;
                         wrong1++;}
@@ -206,16 +206,16 @@ class WBCanvas extends React.Component {
                    
             }
             function ahorcar1(){
-                palabra(input1.value(),palabram1,1,250,220,280,220,280,color1,color2,color3,"wrong1",40);
+                palabra(input1.value(),palabram1,0,250,220,280,220,280,color1,color2,color3,"wrong1",40);
                 input1.value('');
             };
             function ahorcar2(){
-                palabra(input2.value(),palabram2,2,550,520,580,520,580,color3,color1,color2,"wrong2",340);
+                palabra(input2.value(),palabram2,1,550,520,580,520,580,color3,color1,color2,"wrong2",340);
                 input2.value('');
             
             };
             function ahorcar3(){
-                palabra(input3.value(),palabram3,3,850,820,880,820,880,color2,color3,color1,"wrong3",640);
+                palabra(input3.value(),palabram3,2,850,820,880,820,880,color2,color3,color1,"wrong3",640);
                 input3.value('');
              
             };
@@ -320,6 +320,7 @@ function buscar(lt,num) {
     console.log(words[num]);
     var bool=true;
     bool=words[num].includes(lt);
+    console.log(bool);
     return bool;
     }
 
