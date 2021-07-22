@@ -174,18 +174,7 @@ class WBCanvas extends React.Component {
                     p.noStroke();
                     p.fill(0);
                     p.text('you lose!', 350, 100);
-                    if(x1===250){
-                       input1.attribute('disabled', '');
-                       button1.attribute('disabled', '');
-                    }
-                    else if (x1===550){
-                        input2.attribute('disabled', '');
-                        button2.attribute('disabled', '');
-                    }
-                    else if(x1===850){
-                        input3.attribute('disabled', '');
-                        button3.attribute('disabled', '');
-                    }
+                    inhabilitar(x1);
                     //p.line(x1, yi-10, x1+20, y2-30);   
                     //wsreference.sendeline(x1, yi-10, x1+20, y2-30,c1,c2,c3);
                     //p.line(x1+20, yi-10, x1, y2-30);   
@@ -238,51 +227,51 @@ class WBCanvas extends React.Component {
                 
         };
     }
-    inhabilitar(x,y){
-        if (x===40 || x===340){
-                 
-                }
-        else if(x===340){
+    inhabilitar(x){
+        if (x===40 || x===250){
+            input1.attribute('disabled', '');
+            button1.attribute('disabled', '');    
+        }
+        else if(x===340 || x===550){
+            input2.attribute('disabled', '');
+            button2.attribute('disabled', '');
+        }
+        else if(x===640 || x===850){
+            input3.attribute('disabled', '');
+            button3.attribute('disabled', '');
         }
     }
     drawEllipse(x,y,color1,color2,color3) {
-        console.log("elipse")  ;  
-        console.log(x);
-            
+        
+            inhabilitar(x);
             this.myp5.stroke(color1,color2,color3);
             this.myp5.fill(0,255,255);
             this.myp5.ellipse(x, y, 50, 50);
     }
     drawLine(x1,y1,x2,y2,color1,color2,color3) {
-        console.log("line");    
-        console.log(x1);
+            inhabilitar(x1);
             this.myp5.stroke(color1,color2,color3);
             this.myp5.line(x1, y1, x2, y2);
     }
     drawWord(p,x,y) {
-                console.log("word")    
-        console.log(x)
-                 
+                
                 this.myp5.textSize(47);
                 this.myp5.noStroke();
                 this.myp5.fill(0);
                 
                 
                 if (x===40){
-                    input1.attribute('disabled', '');
-                    button1.attribute('disabled', '');
+                    inhabilitar(x);
                     palabraw1.position(x, y);
-                   palabraw1.html(p);  
+                    palabraw1.html(p);  
                 }
                 else if(x===340){
-                    input2.attribute('disabled', '');
-                    button2.attribute('disabled', '');
-                   palabraw2.position(x, y);
-                   palabraw2.html(p);   
+                    inhabilitar(x);
+                    palabraw2.position(x, y);
+                    palabraw2.html(p);   
                 }
                 else if(x===640){
-                    input3.attribute('disabled', '');
-                    button3.attribute('disabled', '');
+                    inhabilitar(x);
                     palabraw3.position(x, y);
                    palabraw3.html(p);   
                 }
